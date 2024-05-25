@@ -32,16 +32,20 @@ public class Planet_Interaction : MonoBehaviour
         {
             if(!hasTheRightPlanet)
             {
-                obj.transform.position = transform.position;
-                obj.transform.rotation = transform.rotation;
-                planetTemplate.SetActive(false);
-
                 if (obj.GetComponent<Planet_Mover>().Planet_Sctiptable.planet == planet_Sctiptable.planet)
                 {
-                    Debug.Log("Son el mismo planeta: " + planet_Sctiptable.planet);
-                    hasTheRightPlanet = true;
+                    
+                    planetTemplate.SetActive(false);
+                    obj.transform.position = transform.position;
+                    obj.transform.rotation = transform.rotation;
+                    TouchMananger.instance.UnSelectAll();     
+                    obj.transform.SetParent(parentRotation);
+
                     obj.GetComponent<SphereCollider>().enabled = false;
+
+                    hasTheRightPlanet = true;
                     Planet.instance.CheckActives();
+
                 }
             }
         }

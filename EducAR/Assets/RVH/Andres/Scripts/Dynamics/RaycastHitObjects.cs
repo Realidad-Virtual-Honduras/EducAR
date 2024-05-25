@@ -28,8 +28,8 @@ public class RaycastHitObjects : MonoBehaviour
             objectSelector = hit.transform.GetComponent<ObjectSelector>();
             Debug.DrawRay(transform.position, transform.forward * distance, Color.green);
 
-            if (objectSelector != null)
-                objectSelector.OnSelectObject(true);
+            /*if (objectSelector != null)
+                objectSelector.OnSelectObject(true);*/
 
         }
         else
@@ -39,7 +39,7 @@ public class RaycastHitObjects : MonoBehaviour
 
             for (int i = 0; i < objectSelectors.Length; i++)
             {
-                objectSelectors[i].OnSelectObject(false);
+                //objectSelectors[i].OnSelectObject(false);
             }
         }
     }

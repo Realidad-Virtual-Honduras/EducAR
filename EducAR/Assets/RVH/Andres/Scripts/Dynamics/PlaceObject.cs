@@ -54,6 +54,7 @@ public class PlaceObject : MonoBehaviour
                     obj.transform.rotation = pose.rotation;
 
                     //Invoke
+                    LevelManager.instance.StarTimer();
                     SolarSystem.instance.Shuffle();
                 }
                 isPlaced = true;

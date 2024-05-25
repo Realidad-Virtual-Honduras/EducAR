@@ -28,6 +28,13 @@ public class Planet : MonoBehaviour
         for (int i = 0; i < interactions.Length; i++) 
         {
             isActive[i] = interactions[i].hasTheRightPlanet;
+
+            if (isAllActive)
+            {
+                interactions[i].StartRotation(true);
+                LevelManager.instance.isComplete = true;
+                GameManager.instance.ActiveContinue(isAllActive);
+            }
         }
 
         foreach (bool b in isActive)
@@ -42,16 +49,6 @@ public class Planet : MonoBehaviour
                 isAllActive = false;
                 break;
             }
-        }
-
-        if (isAllActive)
-        {
-            GameManager.instance.ActiveContinue(isAllActive);
-
-            for (int i = 0; i < interactions.Length; i++)
-            {
-                interactions[i].StartRotation(true);
-            }
-        }
+        }        
     }
 }

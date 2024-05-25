@@ -20,13 +20,14 @@ public class ObjectSelector : MonoBehaviour
 
         leanDragTranslate = GetComponent<LeanDragTranslate>();
         leanRotateAxis = GetComponent<LeanTwistRotateAxis>();
+
+        OnSelectObject(false);
     }
 
     public void OnSelectObject(bool active)
     {
+        //leanDragTranslate.enabled = active;
+        //leanRotateAxis.enabled = active;
         select.SetActive(active);
-
-        leanDragTranslate.enabled = active;
-        leanRotateAxis.enabled = active;
     }
 }
