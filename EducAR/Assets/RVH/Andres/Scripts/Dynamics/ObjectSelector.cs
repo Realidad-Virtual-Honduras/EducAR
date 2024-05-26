@@ -2,32 +2,30 @@ using Lean.Touch;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.ARFoundation;
 
-[RequireComponent(typeof(LeanDragTranslate), typeof(LeanTwistRotateAxis))]
 public class ObjectSelector : MonoBehaviour
 {
-    private static ObjectSelector instance;
+    public static ObjectSelector instance;
     [SerializeField] private GameObject select;
     [Space]
-    private LeanDragTranslate leanDragTranslate;
-    private LeanTwistRotateAxis leanRotateAxis;
+    public UnityEvent eventOnSelect;
+
+    private bool isSelected = true;
 
     void Awake()
     {
         if (instance == null)
             instance = this;
 
-        leanDragTranslate = GetComponent<LeanDragTranslate>();
-        leanRotateAxis = GetComponent<LeanTwistRotateAxis>();
-
-        OnSelectObject(false);
+        OnSelectObject();
     }
 
-    public void OnSelectObject(bool active)
+    public void OnSelectObject()
     {
-        //leanDragTranslate.enabled = active;
-        //leanRotateAxis.enabled = active;
-        select.SetActive(active);
+        isSelected = !isSelected;
+        Debug.Log(gameObject.name + " is: " + isSelected);
+        select.SetActive(isSelected);
     }
 }

@@ -10,7 +10,7 @@ public class Planet : MonoBehaviour
     [SerializeField] Planet_Interaction[] interactions;
 
     [SerializeField] private bool[] isActive;
-    [SerializeField] private bool isAllActive;
+    public bool isAllActive;
 
     private void Awake()
     {
@@ -23,19 +23,18 @@ public class Planet : MonoBehaviour
             isActive[i] = false;
     }
 
+    private void Update()
+    {
+        //CheckActives();
+    }
+
     public void CheckActives()
     {
         for (int i = 0; i < interactions.Length; i++) 
         {
             isActive[i] = interactions[i].hasTheRightPlanet;
 
-            if (isAllActive)
-            {
-                interactions[i].StartRotation(true);
-                LevelManager.instance.isComplete = true;
-                GameManager.instance.ActiveContinue(isAllActive);
-            }
-        }
+        }        
 
         foreach (bool b in isActive)
         {
@@ -47,8 +46,14 @@ public class Planet : MonoBehaviour
             {
                 Debug.Log("not true");
                 isAllActive = false;
-                break;
+                //break;
             }
-        }        
+        }
+
+        if (isAllActive)
+        {
+            LevelManager.instance.WinGame();
+            GameManager.instance.ActiveContinue(isAllActive);
+        }
     }
 }

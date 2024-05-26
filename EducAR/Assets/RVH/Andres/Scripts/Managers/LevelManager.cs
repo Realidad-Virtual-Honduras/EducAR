@@ -1,25 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 using MEC;
+using UnityEngine.XR.ARFoundation;
 using Unity.Mathematics;
 
 public class LevelManager : MonoBehaviour
 {
+    #region Scripts
     public static LevelManager instance;
     private UiManager uiManager;
+    #endregion
 
+    [Header("Ui")]
     public TextMeshProUGUI selectedObject;
     public TextMeshProUGUI timerText;
-    [Space]
-    [SerializeField, Range(0,5)] private float curTimer;
+    public GameObject scanFloorInstruction;
+
+    [Header("Time")]
+    [SerializeField, Range(0,1)] private float timeToWait;
     [SerializeField] private float timer;
-    [SerializeField] private float Ctimer;
+    private float curTime;
+
+    [Header("Instuctions")]
     public string instruccion;
 
+    [Header("Events")]
+    public UnityEvent winEvents;
+    public UnityEvent loseEvents;
+
+    [SerializeField] private ARSession aRSession;
     [HideInInspector] public bool canInteract;
     [HideInInspector] public bool isComplete;
 
@@ -31,7 +45,16 @@ public class LevelManager : MonoBehaviour
         uiManager = FindAnyObjectByType<UiManager>();
         uiManager.instructionsText.text = instruccion;
 
-        UpdateTimer(timer);
+        aRSession = FindAnyObjectByType<ARSession>();
+        //aRSession.Reset();
+
+        ScanObject(true);
+        timerText.text = "";
+    }
+
+    private void Start()
+    {
+        //aRSession.Reset();
     }
 
     #region Timer
@@ -46,9 +69,9 @@ public class LevelManager : MonoBehaviour
         while (gTimer >= 0 && !isComplete)
         {
             UpdateTimer(gTimer);
-            yield return Timing.WaitForSeconds(curTimer);
+            yield return Timing.WaitForSeconds(timeToWait);
             gTimer -= 1f;
-            Ctimer = gTimer;
+            curTime = gTimer;
         }
 
         EndGame();
@@ -67,4 +90,25 @@ public class LevelManager : MonoBehaviour
     {
         canInteract = false;
     }
+
+    public void ScanObject(bool active)
+    {
+        scanFloorInstruction.SetActive(active);
+    }
+
+    #region Win And Lose
+    public void WinGame()
+    {
+        EndGame();
+        Timing.PauseCoroutines();
+        UpdateTimer(curTime);
+        winEvents.Invoke();
+    }
+
+    public void LoseGame()
+    {
+        EndGame();
+        loseEvents.Invoke();
+    }
+    #endregion
 }

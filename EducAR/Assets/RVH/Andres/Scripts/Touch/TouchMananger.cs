@@ -24,14 +24,15 @@ public class TouchMananger : Singleton<TouchMananger>
     public static TouchMananger instance;
 
     [SerializeField] private float distance;
-    [Space]
-    [SerializeField] private ObjectSelector objectSelector;
-    [SerializeField] private ObjectSelector lastObjectSelector;
-    [SerializeField] private bool isSelected;
     [SerializeField] private Transform objectPos;
 
-    private XRRayInteractor _interactor;
+    private bool isSelected;
+    private ObjectSelector objectSelector;
+    private ObjectSelector lastObjectSelector;
+
     private Camera _camera;
+    private XRRayInteractor _interactor;
+
     Ray ray;
     RaycastHit hit;
 
@@ -96,7 +97,7 @@ public class TouchMananger : Singleton<TouchMananger>
             isSelected = true;
             lastObjectSelector = objectSelector;
             lastObjectSelector.gameObject.transform.SetParent(objectPos);
-            lastObjectSelector.OnSelectObject(isSelected);
+            lastObjectSelector.eventOnSelect.Invoke();
         }
 
         LevelManager.instance.selectedObject.text = lastObjectSelector.name;
@@ -117,7 +118,7 @@ public class TouchMananger : Singleton<TouchMananger>
     {
         isSelected = false;
         LevelManager.instance.selectedObject.text = "";
-        lastObjectSelector.OnSelectObject(isSelected);
+        lastObjectSelector.eventOnSelect.Invoke();
         lastObjectSelector.gameObject.transform.SetParent(null);
         lastObjectSelector = null;
 

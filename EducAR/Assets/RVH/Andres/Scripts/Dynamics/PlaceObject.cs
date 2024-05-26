@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using EnhandedTouch = UnityEngine.InputSystem.EnhancedTouch;
@@ -7,19 +9,34 @@ using EnhandedTouch = UnityEngine.InputSystem.EnhancedTouch;
 [RequireComponent(typeof(ARRaycastManager), typeof(ARPlaneManager))]
 public class PlaceObject : MonoBehaviour
 {
-    [SerializeField] private GameObject prefab;
-    [SerializeField] private GameObject obj;
-    [SerializeField] private bool isPlaneDetected;
-    [SerializeField] private bool isPlaced;
+    [Header("Use Prefab")]
+    [SerializeField] private bool usePrefab;
+    [SerializeField] private GameObject placementObject;
+
+    [Header("Object Placement Events")]
+    [SerializeField] private UnityEvent eventsActions;
+
+    private GameObject obj;
+    private bool isPlaced;
 
     private ARRaycastManager raycastManager;
     private ARPlaneManager planeManager;
+
     private List<ARRaycastHit> hitList = new List<ARRaycastHit>();
+
     void Awake()
     {
         raycastManager = GetComponent<ARRaycastManager>();
         planeManager = GetComponent<ARPlaneManager>();
-        obj = Instantiate(prefab);
+
+        if (usePrefab)
+        {
+            obj = null;
+            obj = Instantiate(placementObject);
+        }
+        else
+            obj = placementObject;
+
         obj.SetActive(false);
     }
 
@@ -48,16 +65,15 @@ public class PlaceObject : MonoBehaviour
             {
                 foreach (ARRaycastHit hit in hitList)
                 {
+                    isPlaced = true;
                     obj.SetActive(true);
                     Pose pose = hit.pose;
                     obj.transform.position = pose.position;
                     obj.transform.rotation = pose.rotation;
 
                     //Invoke
-                    LevelManager.instance.StarTimer();
-                    SolarSystem.instance.Shuffle();
+                    eventsActions.Invoke();
                 }
-                isPlaced = true;
             }
         }
     }

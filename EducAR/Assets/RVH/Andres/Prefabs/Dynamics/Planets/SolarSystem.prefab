@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 8781147850175630292}
   - component: {fileID: 5972206723919254605}
   - component: {fileID: 2792676899181703317}
+  - component: {fileID: 5019991141844031189}
   m_Layer: 0
   m_Name: Uranus_Planet
   m_TagString: Untagged
@@ -397,8 +398,35 @@ MonoBehaviour:
   planetTemplate: {fileID: 1049776723839405491}
   parentRotation: {fileID: 3154012789412673558}
   rotationSpeed: 24
+  timeToWait: 0
   hasTheRightPlanet: 0
-  isRotating: 0
+--- !u!54 &5019991141844031189
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545269434978883473}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3597797452497681537
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +438,7 @@ GameObject:
   - component: {fileID: 2069700110025546324}
   - component: {fileID: 1663678641280216447}
   - component: {fileID: 7032919158194012419}
+  - component: {fileID: 5367362728062666695}
   m_Layer: 0
   m_Name: Jupiter_Planet
   m_TagString: Untagged
@@ -470,8 +499,35 @@ MonoBehaviour:
   planetTemplate: {fileID: 3886306619811424724}
   parentRotation: {fileID: 9047463129285445787}
   rotationSpeed: 47
+  timeToWait: 0
   hasTheRightPlanet: 0
-  isRotating: 0
+--- !u!54 &5367362728062666695
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3597797452497681537}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3640177675806540829
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +539,7 @@ GameObject:
   - component: {fileID: 2014392977573071815}
   - component: {fileID: 2074107996503288019}
   - component: {fileID: 3852757775190536698}
+  - component: {fileID: 4704567851999113379}
   m_Layer: 0
   m_Name: Neptune_Planet
   m_TagString: Untagged
@@ -543,8 +600,35 @@ MonoBehaviour:
   planetTemplate: {fileID: 7698583214902486219}
   parentRotation: {fileID: 4444042315563666174}
   rotationSpeed: 19
+  timeToWait: 0
   hasTheRightPlanet: 0
-  isRotating: 0
+--- !u!54 &4704567851999113379
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3640177675806540829}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3886306619811424724
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +723,7 @@ GameObject:
   - component: {fileID: 2100620889740817141}
   - component: {fileID: 4717250760903429733}
   - component: {fileID: 8031896833935841390}
+  - component: {fileID: 5408379260330498399}
   m_Layer: 0
   m_Name: Earth_Planet
   m_TagString: Untagged
@@ -699,8 +784,35 @@ MonoBehaviour:
   planetTemplate: {fileID: 6532301495264716706}
   parentRotation: {fileID: 7193393795554477485}
   rotationSpeed: 107
+  timeToWait: 0
   hasTheRightPlanet: 0
-  isRotating: 0
+--- !u!54 &5408379260330498399
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559151884861828500}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4639417239312986136
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +824,7 @@ GameObject:
   - component: {fileID: 2565061949498197970}
   - component: {fileID: 7074009151536120762}
   - component: {fileID: 2500198696748709778}
+  - component: {fileID: 5297845023446018909}
   m_Layer: 0
   m_Name: Venus_Planet
   m_TagString: Untagged
@@ -772,8 +885,35 @@ MonoBehaviour:
   planetTemplate: {fileID: 1414792127072457920}
   parentRotation: {fileID: 3693599509776629287}
   rotationSpeed: 126
+  timeToWait: 0
   hasTheRightPlanet: 0
-  isRotating: 0
+--- !u!54 &5297845023446018909
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639417239312986136}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4683109601257703077
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,6 +925,7 @@ GameObject:
   - component: {fileID: 2920932856516180686}
   - component: {fileID: 2324899137509933873}
   - component: {fileID: 1511710653757508399}
+  - component: {fileID: 6851649045772270321}
   m_Layer: 0
   m_Name: Saturn_Planet
   m_TagString: Untagged
@@ -845,8 +986,35 @@ MonoBehaviour:
   planetTemplate: {fileID: 9001476214008217653}
   parentRotation: {fileID: 6967490400184722988}
   rotationSpeed: 34
+  timeToWait: 0
   hasTheRightPlanet: 0
-  isRotating: 0
+--- !u!54 &6851649045772270321
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683109601257703077}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4882170816308571155
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +1026,7 @@ GameObject:
   - component: {fileID: 8907376380697767730}
   - component: {fileID: 4077604659256509856}
   - component: {fileID: 3043333521700896772}
+  - component: {fileID: 3078477657397591511}
   m_Layer: 0
   m_Name: Mars_Planet
   m_TagString: Untagged
@@ -918,8 +1087,35 @@ MonoBehaviour:
   planetTemplate: {fileID: 8081335362407731963}
   parentRotation: {fileID: 1697668885864378590}
   rotationSpeed: 86
+  timeToWait: 0
   hasTheRightPlanet: 0
-  isRotating: 0
+--- !u!54 &3078477657397591511
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882170816308571155}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5036634883845419004
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +1159,7 @@ GameObject:
   - component: {fileID: 6814478207185609761}
   - component: {fileID: 6333335522235223582}
   - component: {fileID: 1771208521463727448}
+  - component: {fileID: 7628385730721978711}
   m_Layer: 0
   m_Name: Mercury_Planet
   m_TagString: Untagged
@@ -1023,8 +1220,35 @@ MonoBehaviour:
   planetTemplate: {fileID: 5759955974275845568}
   parentRotation: {fileID: 8190753558000451367}
   rotationSpeed: 172
+  timeToWait: 0
   hasTheRightPlanet: 0
-  isRotating: 0
+--- !u!54 &7628385730721978711
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054912510594361191}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5688950475037394015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7541192425291155409
 Transform:
   m_ObjectHideFlags: 0
@@ -1239,7 +1463,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1679597055420863993}
-  - component: {fileID: 7101000349692921360}
   m_Layer: 0
   m_Name: SolarSystem
   m_TagString: Untagged
@@ -1256,39 +1479,13 @@ Transform:
   m_GameObject: {fileID: 6866837369423518375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4237127080159337740}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7101000349692921360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6866837369423518375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c5bbc11b80e764597d28bd55563e46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allPlanets:
-  - {fileID: 8126296404251363537}
-  - {fileID: 4812609720458438247}
-  - {fileID: 9071364445611077662}
-  - {fileID: 1336709570821400206}
-  - {fileID: 1582586363200420276}
-  - {fileID: 6255029266610818761}
-  - {fileID: 1864054875412861631}
-  - {fileID: 2982321644803505116}
-  allPos: []
-  distanceRandom: 0.5
-  distanceVRandom: 0.5
-  planetsParent:
-  - {fileID: 6814478207185609761}
 --- !u!1 &7167768979810720858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,7 +1576,7 @@ Transform:
   m_GameObject: {fileID: 7563846485338908278}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.92, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1889,12 +2086,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1437730539840585837}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9071364445611077662 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7930889144671957107, guid: f178cbd900f2d1648a0f77245bdd70cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1437730539840585837}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2499845112124572986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1969,12 +2160,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2499845112124572986}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1582586363200420276 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3983225014359866510, guid: 378eac3592bc89a499cb8faf9367f90a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2499845112124572986}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3141072257118249921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2043,12 +2228,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e0210ef28df83a44baca76afba008a5, type: 3}
---- !u!1 &4812609720458438247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7592655116178179494, guid: 6e0210ef28df83a44baca76afba008a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 3141072257118249921}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6877300842539459448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8423490790865567929, guid: 6e0210ef28df83a44baca76afba008a5,
@@ -2219,12 +2398,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4159884735069372967}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8126296404251363537 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5295255310318865142, guid: e2393420044421347b5c3520bf2ebd53,
-    type: 3}
-  m_PrefabInstance: {fileID: 4159884735069372967}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4565825839058793619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2293,12 +2466,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44506950b79bfbe479027d0a54c61af7, type: 3}
---- !u!1 &1336709570821400206 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3301666486452130333, guid: 44506950b79bfbe479027d0a54c61af7,
-    type: 3}
-  m_PrefabInstance: {fileID: 4565825839058793619}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2743378615001989765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1823784368326243862, guid: 44506950b79bfbe479027d0a54c61af7,
@@ -2373,12 +2540,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 189a65c83ebd4c945a1a13b4dcde7cb4, type: 3}
---- !u!1 &2982321644803505116 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1651807958875500856, guid: 189a65c83ebd4c945a1a13b4dcde7cb4,
-    type: 3}
-  m_PrefabInstance: {fileID: 4579935603245140708}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5458873883884226812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8380886415034335768, guid: 189a65c83ebd4c945a1a13b4dcde7cb4,
@@ -2453,12 +2614,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38657ee86dec8341a7d90415e4c784a, type: 3}
---- !u!1 &1864054875412861631 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5726025735948714012, guid: c38657ee86dec8341a7d90415e4c784a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6244410319257883299}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5597950481144754051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1947648871919942944, guid: c38657ee86dec8341a7d90415e4c784a,
@@ -2533,12 +2688,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7ba969117ede149951066cbed9228d, type: 3}
---- !u!1 &6255029266610818761 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3173495512520473819, guid: 2f7ba969117ede149951066cbed9228d,
-    type: 3}
-  m_PrefabInstance: {fileID: 8846431554639409682}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8883055731905495556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 108687545888354326, guid: 2f7ba969117ede149951066cbed9228d,

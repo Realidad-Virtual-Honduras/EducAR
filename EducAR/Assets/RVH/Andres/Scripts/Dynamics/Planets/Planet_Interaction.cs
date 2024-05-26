@@ -1,3 +1,5 @@
+using MEC;
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,14 +16,14 @@ public class Planet_Interaction : MonoBehaviour
     [SerializeField] private GameObject planetTemplate;
     [SerializeField] private Transform parentRotation;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private float timeToWait;
     private float time;
     [Space]
     public bool hasTheRightPlanet;
-    public bool isRotating;
 
     private void Awake()
     {
-        StartRotation(false);
+        time = 0;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,19 +35,17 @@ public class Planet_Interaction : MonoBehaviour
             if(!hasTheRightPlanet)
             {
                 if (obj.GetComponent<Planet_Mover>().Planet_Sctiptable.planet == planet_Sctiptable.planet)
-                {
-                    
-                    planetTemplate.SetActive(false);
+                {                    
+                    planetTemplate.GetComponent<MeshRenderer>().enabled = (false);
+                    hasTheRightPlanet = true;
+
                     obj.transform.position = transform.position;
                     obj.transform.rotation = transform.rotation;
-                    TouchMananger.instance.UnSelectAll();     
-                    obj.transform.SetParent(parentRotation);
 
-                    obj.GetComponent<SphereCollider>().enabled = false;
-
-                    hasTheRightPlanet = true;
+                    TouchMananger.instance.UnSelectAll(); 
                     Planet.instance.CheckActives();
 
+                    obj.transform.SetParent(planetTemplate.gameObject.transform);
                 }
             }
         }
@@ -71,7 +71,7 @@ public class Planet_Interaction : MonoBehaviour
 
         if (obj.GetComponent<Planet_Mover>() != null)
         {
-            planetTemplate.SetActive(true);
+            //planetTemplate.SetActive(true);
 
             if (obj.GetComponent<Planet_Mover>().Planet_Sctiptable.planet == planet_Sctiptable.planet)
             {
@@ -81,17 +81,18 @@ public class Planet_Interaction : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    public void RotatePlanet()
     {
-        if(isRotating) 
-        {
-            time = Time.fixedTime;
-            parentRotation.eulerAngles = new Vector3(0, rotationSpeed * time, 0);
-        }
+        Timing.RunCoroutine(StartRotation(timeToWait));
     }
 
-    public void StartRotation(bool active)
+    private IEnumerator<float> StartRotation(float seconds)
     {
-        isRotating = active;
+        while(time <= 99999)
+        {
+            yield return Timing.WaitForSeconds(seconds);
+            time += seconds;
+            parentRotation.eulerAngles = new Vector3(0, rotationSpeed * time, 0);
+        }
     }
 }
