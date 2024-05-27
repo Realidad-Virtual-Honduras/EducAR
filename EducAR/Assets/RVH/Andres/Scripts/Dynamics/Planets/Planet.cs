@@ -53,7 +53,7 @@ public class Planet : MonoBehaviour
         if (isAllActive)
         {
             LevelManager.instance.WinGame();
-            GameManager.instance.ActiveContinue(isAllActive);
+            //GameManager.instance.ActiveContinue(isAllActive);
         }
     }
 }

@@ -26,6 +26,11 @@ public class ShuffleObjects : MonoBehaviour
         if(instance == null)
             instance = this;
 
+        for (int i = 0; i < objects.Length; i++)
+        {
+            objects[i].SetActive(false);
+        }
+
         allPos = new Vector3[objects.Length];
         isTaken = new List<Transform>(pos);
 
@@ -33,7 +38,7 @@ public class ShuffleObjects : MonoBehaviour
         {
             for (int i = 0; i < allPos.Length; i++)
             {
-                objects[i].SetActive(false);
+                //objects[i].SetActive(false);
                 allPos[i] = new Vector3(Random.Range(-distanceHRandom, distanceHRandom), Random.Range(distanceVRandom, distanceHRandom), Random.Range(-distanceHRandom, distanceHRandom));
                 pos[i].position = allPos[i];
             }
@@ -55,6 +60,7 @@ public class ShuffleObjects : MonoBehaviour
 
             objs.transform.SetParent(randomPos);
             objs.transform.position = randomPos.position;
+            objs.transform.rotation = randomPos.rotation;
 
             isTaken.RemoveAt(randomIdx);
         }

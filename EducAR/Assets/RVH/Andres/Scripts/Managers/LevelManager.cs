@@ -24,7 +24,6 @@ public class LevelManager : MonoBehaviour
     [Header("Time")]
     [SerializeField, Range(0,1)] private float timeToWait;
     [SerializeField] private float timer;
-    private float curTime;
 
     [Header("Instuctions")]
     public string instruccion;
@@ -34,6 +33,8 @@ public class LevelManager : MonoBehaviour
     public UnityEvent loseEvents;
 
     [SerializeField] private ARSession aRSession;
+
+    [HideInInspector] public float curTime;
     [HideInInspector] public bool canInteract;
     [HideInInspector] public bool isComplete;
 
@@ -74,7 +75,7 @@ public class LevelManager : MonoBehaviour
             curTime = gTimer;
         }
 
-        EndGame();
+        LoseGame();
     }
 
     private void UpdateTimer(float uTimer)
@@ -89,6 +90,7 @@ public class LevelManager : MonoBehaviour
     private void EndGame()
     {
         canInteract = false;
+        GameManager.instance.ActiveContinue(true);
     }
 
     public void ScanObject(bool active)

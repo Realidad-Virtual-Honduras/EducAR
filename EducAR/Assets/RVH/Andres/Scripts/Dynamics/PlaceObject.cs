@@ -37,7 +37,11 @@ public class PlaceObject : MonoBehaviour
         else
             obj = placementObject;
 
-        obj.SetActive(false);
+    }
+
+    private void Start()
+    {
+        obj.SetActive(false);        
     }
 
     private void OnEnable()
