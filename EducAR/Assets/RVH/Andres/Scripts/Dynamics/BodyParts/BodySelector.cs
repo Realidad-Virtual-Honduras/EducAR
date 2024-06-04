@@ -60,19 +60,14 @@ public class BodySelector : MonoBehaviour
     {
         if (bodyPartsName.Count == 0)
         {
+            bodyAnimation.Play();
             LevelManager.instance.WinGame();
             GameManager.instance.ActiveContinue(true);
-            bodyAnimation.Play();
         }
         else
         {
             int random = Random.Range(0, bodyPartsName.Count);
-            nameSelected = bodyPartsName[random];
-
-            for (int i = 0; i < finalPos.Length; i++)
-            {
-                finalPos[i].GetComponent<BoxCollider>().enabled = true;
-            }
+            nameSelected = bodyPartsName[random];            
 
             for (int i = 0; i < finalPos.Length; i++)
             {
@@ -85,7 +80,6 @@ public class BodySelector : MonoBehaviour
             SpaceCapitals(nameSelected, true, true, false);
 
             bodyQuestionText.text = questionPart1 + "<color=#0153ff>" + nameSelectedSpaced + "</color>" + questionPart2;
-
         }
     }
 
@@ -113,19 +107,17 @@ public class BodySelector : MonoBehaviour
 
     public void SelectBodyPart(int idx)
     {
-        bodyPartSelected = bodyParts[idx];
-
-        
+        bodyPartSelected = bodyParts[idx];        
     }
 
     public void OnCorrect()
     {
         bodyPartsName.Remove(nameSelected);
 
-        bodyPartSelected.GetComponent<ObjectSelector>().OnSelectObject();
-        bodyPartSelected.GetComponent<BodyPartInfo>().ShowInfo();
-
-        TouchMananger.instance.UnSelectAll();
+        for (int i = 0; i < finalPos.Length; i++)
+        {
+            finalPos[i].GetComponent<BoxCollider>().enabled = true;
+        }
 
         bodyPartSelected = null;
     }
@@ -137,11 +129,5 @@ public class BodySelector : MonoBehaviour
         bodyMaterialSelected.color = Color.white;       
 
         bodyPartsName.Clear();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Escape))
-            placedObjectEvent.Invoke();
     }
 }

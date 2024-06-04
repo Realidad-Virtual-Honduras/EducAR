@@ -10,10 +10,14 @@ public class EyePart_Detector : MonoBehaviour
 
     public BodyPart_Eye bodyPartEye;
 
+    private BodySelector bodySelector;
+
     private void Awake()
     {
         if(instance == null)
             instance = this;
+
+        bodySelector = FindObjectOfType<BodySelector>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,40 +27,11 @@ public class EyePart_Detector : MonoBehaviour
         if(obj.GetComponent<EyePart_Interactor>() != null)
         {
             if (BodySelector.instance.nameSelected == obj.GetComponent<EyePart_Interactor>().bodyPartEye.ToString())
-            {
                 Timing.RunCoroutine(IsCorrect(obj));
-                BodySelector.instance.placedObjectEvent.Invoke();
-            }
             else
-                Timing.RunCoroutine(IsNotCorrect(obj));   
-            
-            if (bodyPartEye == obj.GetComponent<EyePart_Interactor>().bodyPartEye)
-            {
-            }
+                Timing.RunCoroutine(IsNotCorrect(obj));
         }
     }
-
-    /*private void OnTriggerStay(Collider other)
-    {
-        GameObject obj = other.gameObject;
-        if(obj.GetComponent<EyePart_Interactor>() != null)
-        {
-            if (bodyPartEye == obj.GetComponent<EyePart_Interactor>().bodyPartEye)
-            {
-                if (BodySelector.instance.nameSelected == bodyPartEye.ToString())
-                {
-                    BodySelector.instance.Checkcolision.text = "<color=green>" + gameObject.name + "</color>";
-                    Timing.RunCoroutine(IsCorrect(obj));
-                }
-
-                BodySelector.instance.Checkcolision.text = "<color=#0153ff>" + gameObject.name + "</color>";
-            }
-            else
-            {
-                BodySelector.instance.Checkcolision.text = "<color=red>" + gameObject.name + "</color>";
-            }
-        }
-    }*/
 
     private void OnTriggerExit(Collider other) 
     {
@@ -71,28 +46,25 @@ public class EyePart_Detector : MonoBehaviour
     {
 
         obj.transform.SetParent(transform);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+        obj.GetComponent<BoxCollider>().enabled = false;
+
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
         obj.transform.localScale = transform.localScale;
 
-        obj.GetComponent<BoxCollider>().enabled = false;
+        yield return Timing.WaitForSeconds(0.3f);
 
-        obj.GetComponent<ObjectSelector>().OnSelectObject();
-        obj.GetComponent<BodyPartInfo>().ShowInfo();
+        gameObject.GetComponent<BoxCollider>().enabled = false;
 
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<BoxCollider>().enabled = false;        
-
+        bodySelector.placedObjectEvent.Invoke();
         TouchMananger.instance.UnSelectAll();
-
-        yield return Timing.WaitForSeconds(0.5f);
     }
 
     private IEnumerator<float> IsNotCorrect(GameObject obj)
     {
         BodySelector.instance.bodyMaterialSelected.color = Color.red;
-        //obj.GetComponent<ObjectSelector>().OnSelectObject();
-        obj.GetComponent<BodyPartInfo>().ShowInfo();
 
         yield return Timing.WaitForSeconds(1f);
         BodySelector.instance.bodyMaterialSelected.color = Color.white;

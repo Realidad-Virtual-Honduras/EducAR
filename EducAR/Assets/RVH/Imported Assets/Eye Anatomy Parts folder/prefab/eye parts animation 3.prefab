@@ -1376,9 +1376,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 68016269999922407}
-  - component: {fileID: 3882960717781618117}
+  - component: {fileID: 68016270010063105}
   m_Layer: 0
-  m_Name: eye parts animation 2
+  m_Name: eye parts animation 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1410,27 +1410,24 @@ Transform:
   - {fileID: 68016269999922383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -14.087001, y: 10.974001, z: -3.7310002}
---- !u!95 &3882960717781618117
-Animator:
-  serializedVersion: 5
+--- !u!111 &68016270010063105
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68016270000079047}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf79fa3c33a373146b8f06dc009532f6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 63a79cded6bfb4bf2bb86c72acc939d9, type: 3}
+  m_Animations:
+  - {fileID: 7400000, guid: 63a79cded6bfb4bf2bb86c72acc939d9, type: 3}
+  - {fileID: 7400002, guid: 63a79cded6bfb4bf2bb86c72acc939d9, type: 3}
+  - {fileID: 7400004, guid: 63a79cded6bfb4bf2bb86c72acc939d9, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &68016270000079049
 GameObject:
   m_ObjectHideFlags: 0
