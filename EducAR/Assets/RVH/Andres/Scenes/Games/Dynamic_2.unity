@@ -860,6 +860,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  questionPart1: "\xBFQu\xE9 dinosaurio es el: "
+  questionPart2: '? Selecciona el correcto.'
 --- !u!114 &762400720 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4206760291395026559, guid: a6d09f78b7552e64f83086831796c96a,

@@ -1,0 +1,688 @@
+fileFormatVersion: 2
+guid: 63a79cded6bfb4bf2bb86c72acc939d9
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: artery_retina_inside_1
+  - first:
+      1: 100002
+    second: cornea_inside
+  - first:
+      1: 100004
+    second: cornea_outside
+  - first:
+      1: 100006
+    second: //RootNode
+  - first:
+      1: 100008
+    second: eye_muscles
+  - first:
+      1: 100010
+    second: eye_over_cornea
+  - first:
+      1: 100012
+    second: eye_sphere_inside
+  - first:
+      1: 100014
+    second: eye_sphere_outside
+  - first:
+      1: 100016
+    second: half_veins
+  - first:
+      1: 100018
+    second: lens
+  - first:
+      1: 100020
+    second: muscle_0
+  - first:
+      1: 100022
+    second: muscle_1
+  - first:
+      1: 100024
+    second: muscle_3
+  - first:
+      1: 100026
+    second: muscle_4
+  - first:
+      1: 100028
+    second: muscle_5
+  - first:
+      1: 100030
+    second: muscle_6
+  - first:
+      1: 100032
+    second: nerv_element_1
+  - first:
+      1: 100034
+    second: nerv_element_2
+  - first:
+      1: 100036
+    second: nerv_element_3
+  - first:
+      1: 100038
+    second: nerv_element_4
+  - first:
+      1: 100040
+    second: optical_nerv
+  - first:
+      1: 100042
+    second: vein_down
+  - first:
+      1: 100044
+    second: vein_retina_inside_1
+  - first:
+      1: 100046
+    second: vein_up
+  - first:
+      4: 400000
+    second: artery_retina_inside_1
+  - first:
+      4: 400002
+    second: cornea_inside
+  - first:
+      4: 400004
+    second: cornea_outside
+  - first:
+      4: 400006
+    second: //RootNode
+  - first:
+      4: 400008
+    second: eye_muscles
+  - first:
+      4: 400010
+    second: eye_over_cornea
+  - first:
+      4: 400012
+    second: eye_sphere_inside
+  - first:
+      4: 400014
+    second: eye_sphere_outside
+  - first:
+      4: 400016
+    second: half_veins
+  - first:
+      4: 400018
+    second: lens
+  - first:
+      4: 400020
+    second: muscle_0
+  - first:
+      4: 400022
+    second: muscle_1
+  - first:
+      4: 400024
+    second: muscle_3
+  - first:
+      4: 400026
+    second: muscle_4
+  - first:
+      4: 400028
+    second: muscle_5
+  - first:
+      4: 400030
+    second: muscle_6
+  - first:
+      4: 400032
+    second: nerv_element_1
+  - first:
+      4: 400034
+    second: nerv_element_2
+  - first:
+      4: 400036
+    second: nerv_element_3
+  - first:
+      4: 400038
+    second: nerv_element_4
+  - first:
+      4: 400040
+    second: optical_nerv
+  - first:
+      4: 400042
+    second: vein_down
+  - first:
+      4: 400044
+    second: vein_retina_inside_1
+  - first:
+      4: 400046
+    second: vein_up
+  - first:
+      23: 2300000
+    second: artery_retina_inside_1
+  - first:
+      23: 2300002
+    second: cornea_inside
+  - first:
+      23: 2300004
+    second: cornea_outside
+  - first:
+      23: 2300006
+    second: eye_over_cornea
+  - first:
+      23: 2300008
+    second: eye_sphere_inside
+  - first:
+      23: 2300010
+    second: eye_sphere_outside
+  - first:
+      23: 2300012
+    second: half_veins
+  - first:
+      23: 2300014
+    second: lens
+  - first:
+      23: 2300016
+    second: muscle_0
+  - first:
+      23: 2300018
+    second: muscle_1
+  - first:
+      23: 2300020
+    second: muscle_3
+  - first:
+      23: 2300022
+    second: muscle_4
+  - first:
+      23: 2300024
+    second: muscle_5
+  - first:
+      23: 2300026
+    second: muscle_6
+  - first:
+      23: 2300028
+    second: nerv_element_1
+  - first:
+      23: 2300030
+    second: nerv_element_2
+  - first:
+      23: 2300032
+    second: nerv_element_3
+  - first:
+      23: 2300034
+    second: nerv_element_4
+  - first:
+      23: 2300036
+    second: vein_down
+  - first:
+      23: 2300038
+    second: vein_retina_inside_1
+  - first:
+      23: 2300040
+    second: vein_up
+  - first:
+      33: 3300000
+    second: artery_retina_inside_1
+  - first:
+      33: 3300002
+    second: cornea_inside
+  - first:
+      33: 3300004
+    second: cornea_outside
+  - first:
+      33: 3300006
+    second: eye_over_cornea
+  - first:
+      33: 3300008
+    second: eye_sphere_inside
+  - first:
+      33: 3300010
+    second: eye_sphere_outside
+  - first:
+      33: 3300012
+    second: half_veins
+  - first:
+      33: 3300014
+    second: lens
+  - first:
+      33: 3300016
+    second: muscle_0
+  - first:
+      33: 3300018
+    second: muscle_1
+  - first:
+      33: 3300020
+    second: muscle_3
+  - first:
+      33: 3300022
+    second: muscle_4
+  - first:
+      33: 3300024
+    second: muscle_5
+  - first:
+      33: 3300026
+    second: muscle_6
+  - first:
+      33: 3300028
+    second: nerv_element_1
+  - first:
+      33: 3300030
+    second: nerv_element_2
+  - first:
+      33: 3300032
+    second: nerv_element_3
+  - first:
+      33: 3300034
+    second: nerv_element_4
+  - first:
+      33: 3300036
+    second: vein_down
+  - first:
+      33: 3300038
+    second: vein_retina_inside_1
+  - first:
+      33: 3300040
+    second: vein_up
+  - first:
+      43: 4300000
+    second: muscle_6
+  - first:
+      43: 4300002
+    second: muscle_5
+  - first:
+      43: 4300004
+    second: muscle_4
+  - first:
+      43: 4300006
+    second: muscle_3
+  - first:
+      43: 4300008
+    second: muscle_1
+  - first:
+      43: 4300010
+    second: muscle_0
+  - first:
+      43: 4300012
+    second: vein_retina_inside_1
+  - first:
+      43: 4300014
+    second: artery_retina_inside_1
+  - first:
+      43: 4300016
+    second: nerv_element_1
+  - first:
+      43: 4300018
+    second: nerv_element_2
+  - first:
+      43: 4300020
+    second: nerv_element_3
+  - first:
+      43: 4300022
+    second: nerv_element_4
+  - first:
+      43: 4300024
+    second: eye_sphere_inside
+  - first:
+      43: 4300026
+    second: eye_sphere_outside
+  - first:
+      43: 4300028
+    second: vein_up
+  - first:
+      43: 4300030
+    second: vein_down
+  - first:
+      43: 4300032
+    second: eye_over_cornea
+  - first:
+      43: 4300034
+    second: lens
+  - first:
+      43: 4300036
+    second: cornea_inside
+  - first:
+      43: 4300038
+    second: cornea_outside
+  - first:
+      43: 4300040
+    second: half_veins
+  - first:
+      74: 7400000
+    second: idle
+  - first:
+      74: 7400002
+    second: expand
+  - first:
+      74: 7400004
+    second: contract
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: C4D Animation Take
+      internalID: 0
+      firstFrame: 2
+      lastFrame: 3
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cornea_inside
+        weight: 1
+      - path: cornea_outside
+        weight: 1
+      - path: eye_muscles
+        weight: 1
+      - path: eye_muscles/muscle_0
+        weight: 1
+      - path: eye_muscles/muscle_1
+        weight: 1
+      - path: eye_muscles/muscle_3
+        weight: 1
+      - path: eye_muscles/muscle_4
+        weight: 1
+      - path: eye_muscles/muscle_5
+        weight: 1
+      - path: eye_muscles/muscle_6
+        weight: 1
+      - path: eye_over_cornea
+        weight: 1
+      - path: eye_sphere_inside
+        weight: 1
+      - path: eye_sphere_outside
+        weight: 1
+      - path: half_veins
+        weight: 1
+      - path: lens
+        weight: 1
+      - path: optical_nerv
+        weight: 1
+      - path: optical_nerv/artery_retina_inside_1
+        weight: 1
+      - path: optical_nerv/nerv_element_1
+        weight: 1
+      - path: optical_nerv/nerv_element_2
+        weight: 1
+      - path: optical_nerv/nerv_element_3
+        weight: 1
+      - path: optical_nerv/nerv_element_4
+        weight: 1
+      - path: optical_nerv/vein_retina_inside_1
+        weight: 1
+      - path: vein_down
+        weight: 1
+      - path: vein_up
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: expand
+      takeName: C4D Animation Take
+      internalID: 0
+      firstFrame: 3
+      lastFrame: 37
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cornea_inside
+        weight: 1
+      - path: cornea_outside
+        weight: 1
+      - path: eye_muscles
+        weight: 1
+      - path: eye_muscles/muscle_0
+        weight: 1
+      - path: eye_muscles/muscle_1
+        weight: 1
+      - path: eye_muscles/muscle_3
+        weight: 1
+      - path: eye_muscles/muscle_4
+        weight: 1
+      - path: eye_muscles/muscle_5
+        weight: 1
+      - path: eye_muscles/muscle_6
+        weight: 1
+      - path: eye_over_cornea
+        weight: 1
+      - path: eye_sphere_inside
+        weight: 1
+      - path: eye_sphere_outside
+        weight: 1
+      - path: half_veins
+        weight: 1
+      - path: lens
+        weight: 1
+      - path: optical_nerv
+        weight: 1
+      - path: optical_nerv/artery_retina_inside_1
+        weight: 1
+      - path: optical_nerv/nerv_element_1
+        weight: 1
+      - path: optical_nerv/nerv_element_2
+        weight: 1
+      - path: optical_nerv/nerv_element_3
+        weight: 1
+      - path: optical_nerv/nerv_element_4
+        weight: 1
+      - path: optical_nerv/vein_retina_inside_1
+        weight: 1
+      - path: vein_down
+        weight: 1
+      - path: vein_up
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: contract
+      takeName: C4D Animation Take
+      internalID: 0
+      firstFrame: 37
+      lastFrame: 74
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cornea_inside
+        weight: 1
+      - path: cornea_outside
+        weight: 1
+      - path: eye_muscles
+        weight: 1
+      - path: eye_muscles/muscle_0
+        weight: 1
+      - path: eye_muscles/muscle_1
+        weight: 1
+      - path: eye_muscles/muscle_3
+        weight: 1
+      - path: eye_muscles/muscle_4
+        weight: 1
+      - path: eye_muscles/muscle_5
+        weight: 1
+      - path: eye_muscles/muscle_6
+        weight: 1
+      - path: eye_over_cornea
+        weight: 1
+      - path: eye_sphere_inside
+        weight: 1
+      - path: eye_sphere_outside
+        weight: 1
+      - path: half_veins
+        weight: 1
+      - path: lens
+        weight: 1
+      - path: optical_nerv
+        weight: 1
+      - path: optical_nerv/artery_retina_inside_1
+        weight: 1
+      - path: optical_nerv/nerv_element_1
+        weight: 1
+      - path: optical_nerv/nerv_element_2
+        weight: 1
+      - path: optical_nerv/nerv_element_3
+        weight: 1
+      - path: optical_nerv/nerv_element_4
+        weight: 1
+      - path: optical_nerv/vein_retina_inside_1
+        weight: 1
+      - path: vein_down
+        weight: 1
+      - path: vein_up
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

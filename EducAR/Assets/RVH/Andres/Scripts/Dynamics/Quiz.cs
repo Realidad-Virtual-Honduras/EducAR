@@ -20,6 +20,10 @@ public class Quiz : MonoBehaviour
     [SerializeField] private TextMeshProUGUI question;
     [SerializeField] private UnityEvent eventOnCorrect;
 
+    [Header("Question Maker")]
+    [SerializeField] private string questionPart1;
+    [SerializeField] private string questionPart2;
+
     void Awake()
     {
         if (instance == null)
@@ -86,7 +90,7 @@ public class Quiz : MonoBehaviour
             int random = Random.Range(0, objectsNames.Count);
             nameSelected = objectsNames[random];
 
-            question.text = "¿Qué dinosaruio es el: " + nameSelected + "? Selecciona el correcto";
+            question.text = questionPart1 + nameSelected + questionPart2;
         }
     }
 

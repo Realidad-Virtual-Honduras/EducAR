@@ -32,7 +32,8 @@ public class LevelManager : MonoBehaviour
     public UnityEvent winEvents;
     public UnityEvent loseEvents;
 
-    [SerializeField] private ARSession aRSession;
+    [Header("FX")]
+    public Material selectedMat;
 
     [HideInInspector] public float curTime;
     [HideInInspector] public bool canInteract;
@@ -46,16 +47,12 @@ public class LevelManager : MonoBehaviour
         uiManager = FindAnyObjectByType<UiManager>();
         uiManager.instructionsText.text = instruccion;
 
-        aRSession = FindAnyObjectByType<ARSession>();
-        //aRSession.Reset();
-
         ScanObject(true);
         timerText.text = "";
     }
 
     private void Start()
     {
-        //aRSession.Reset();
     }
 
     #region Timer
@@ -111,6 +108,23 @@ public class LevelManager : MonoBehaviour
     {
         EndGame();
         loseEvents.Invoke();
+    }
+    #endregion
+
+    #region ActiveMaterial
+    public void AlphaOnMat()
+    {
+        selectedMat.SetFloat("_Alpha", 1);
+    }
+
+    public void AlphaOffMat()
+    {
+        selectedMat.SetFloat("_Alpha", 0);
+    }
+
+    public void ChangeColor(Color color)
+    {
+        selectedMat.SetColor("_OutlineColor", color);
     }
     #endregion
 }

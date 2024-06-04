@@ -26,6 +26,12 @@ public class ObjectSelector : MonoBehaviour
     {
         isSelected = !isSelected;
         Debug.Log(gameObject.name + " is: " + isSelected);
+
+        if (isSelected)
+            LevelManager.instance.AlphaOnMat();
+        else
+            LevelManager.instance.AlphaOffMat();
+
         select.SetActive(isSelected);
     }
 }

@@ -266,7 +266,8 @@ MonoBehaviour:
   loseEvents:
     m_PersistentCalls:
       m_Calls: []
-  aRSession: {fileID: 0}
+  selectedMat: {fileID: 2100000, guid: 80dbbe277e139ce489ffd961404f5e2e, type: 2}
+  curTime: 0
   canInteract: 0
   isComplete: 0
 --- !u!1 &7325662782997814472
