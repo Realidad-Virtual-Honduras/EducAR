@@ -2,58 +2,62 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+using TMPro;
 
 public enum PlanetType{Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune, }
 public class Planet : MonoBehaviour
 {
     public static Planet instance;
-    [SerializeField] Planet_Interaction[] interactions;
-
-    [SerializeField] private bool[] isActive;
+    public Planet_Interaction[] interactions;
+    public List<string> planetsNames = new List<string>();
+    public UnityEvent onCorrect;
     public bool isAllActive;
+    public Toggle toggle;
+    public TextMeshProUGUI text;
 
     private void Awake()
     {
         if(instance == null)
             instance = this;
 
-        isActive = new bool[interactions.Length];
+        toggle.isOn = isAllActive;
+        text.text = "";
 
-        for(int i = 0; i < isActive.Length; i++)
-            isActive[i] = false;
+        AddPlanets();
     }
 
-    private void Update()
+    public void AddPlanets()
     {
-        //CheckActives();
+        for (int i = 0; i < interactions.Length; i++)
+        {
+            planetsNames.Add(interactions[i].GetComponent<Planet_Interaction>().planetType.ToString());
+        }
+
+        foreach (var listmember in planetsNames)
+        {
+            text.text += "\n" + listmember.ToString();
+        }
     }
 
     public void CheckActives()
     {
-        for (int i = 0; i < interactions.Length; i++) 
-        {
-            isActive[i] = interactions[i].hasTheRightPlanet;
-
-        }        
-
-        foreach (bool b in isActive)
-        {
-            if (b)
-            {
-                isAllActive = true;
-            }
-            else
-            {
-                Debug.Log("not true");
-                isAllActive = false;
-                //break;
-            }
-        }
-
-        if (isAllActive)
+        if(planetsNames.Count == 0)
         {
             LevelManager.instance.WinGame();
-            //GameManager.instance.ActiveContinue(isAllActive);
+        }
+    }
+
+    public void RemoveElement(string element)
+    {
+        planetsNames.Remove(element);
+
+        text.text = "";
+
+        foreach (var listmember in planetsNames)
+        {
+            text.text += "\n" + listmember.ToString();
         }
     }
 }

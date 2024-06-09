@@ -25,6 +25,7 @@ public class TouchMananger : Singleton<TouchMananger>
 
     [SerializeField] private float distance;
     [SerializeField] private Transform objectPos;
+    [SerializeField] private Transform originalParent;
 
     private bool isSelected;
     private ObjectSelector objectSelector;
@@ -51,8 +52,10 @@ public class TouchMananger : Singleton<TouchMananger>
         LevelManager.instance.selectedObject.text = "";
         m_TouchControls.Touch.TouchPress.started += ctx => StartTouch(ctx);
         m_TouchControls.Touch.TouchPress.canceled += ctx => EndTouch(ctx);
+        m_TouchControls.Touch.MultiTap.performed += ctx => MultiTappedPerformed(ctx);
     }
 
+    #region Raycast
     private void Update()
     {
         ray = _camera.ScreenPointToRay(Input.mousePosition);
@@ -82,6 +85,7 @@ public class TouchMananger : Singleton<TouchMananger>
             SelectObject();
         }
     }
+    #endregion
 
     #region Selections
     private void SelectObject()
@@ -92,6 +96,7 @@ public class TouchMananger : Singleton<TouchMananger>
             UnselectObject();
             return;
         }
+
         if(lastObjectSelector == null)
         {
             isSelected = true;
@@ -119,7 +124,9 @@ public class TouchMananger : Singleton<TouchMananger>
         isSelected = false;
         LevelManager.instance.selectedObject.text = "";
         lastObjectSelector.eventOnSelect.Invoke();
+
         lastObjectSelector.gameObject.transform.SetParent(null);
+
         lastObjectSelector = null;
 
         Debug.Log("Se deselecciono el objeto " + lastObjectSelector.name);
@@ -127,11 +134,11 @@ public class TouchMananger : Singleton<TouchMananger>
         //objectSelector.OnSelectObject(false);
         //lastObjectSelector.OnSelectObject(false);
 
-        if (objectSelector != lastObjectSelector)
+        /*if (objectSelector != lastObjectSelector)
         {
             SelectObject();
             lastObjectSelector.gameObject.transform.SetParent(null);
-        }
+        }*/
 
         //lastObjectSelector = null;
     }
@@ -142,6 +149,11 @@ public class TouchMananger : Singleton<TouchMananger>
         UnselectObject();
     }
     #endregion
+
+    private void PinchScale()
+    {
+
+    }
 
     #region Enable / Disable
     private void OnEnable()
@@ -158,25 +170,25 @@ public class TouchMananger : Singleton<TouchMananger>
     #region Touch Event Voids
     private void StartTouch(InputAction.CallbackContext context)
     {
-        //Debug.Log("Touch Started " + m_TouchControls.Touch.TouchPosition.ReadValue<Vector2>());
-        
-        if(LevelManager.instance.canInteract)
-            RaycastSelector();
-        //HitObjects();       
-
         if (OnStartTouch != null) 
             OnStartTouch(m_TouchControls.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.startTime);
+
+        if(LevelManager.instance.canInteract)
+            RaycastSelector();    
     }
 
     private void EndTouch(InputAction.CallbackContext context)
     {
-        //Debug.Log("Touch ended " + m_TouchControls.Touch.TouchPosition.ReadValue<Vector2>());
+        if (OnEndTouch != null)
+            OnEndTouch(m_TouchControls.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
 
         if (LevelManager.instance.canInteract)
             Hits();
+    }
 
-        if (OnEndTouch != null)
-            OnEndTouch(m_TouchControls.Touch.TouchPosition.ReadValue<Vector2>(), (float)context.time);
+    private void MultiTappedPerformed(InputAction.CallbackContext context)
+    {
+        PlaceOnPlane.instance.StartGame(m_TouchControls.Touch.TouchPosition.ReadValue<Vector2>());
     }
     #endregion
 }

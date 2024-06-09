@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour
     public void StarTimer()
     {
         canInteract = true;
-        Timing.RunCoroutine(TimerGlobal(timer));
+        Timing.RunCoroutine(TimerGlobal(timer), "Timer");
     }
 
     private IEnumerator<float> TimerGlobal(float gTimer)
@@ -99,7 +99,7 @@ public class LevelManager : MonoBehaviour
     public void WinGame()
     {
         EndGame();
-        Timing.PauseCoroutines();
+        Timing.PauseCoroutines("Timer");
         UpdateTimer(curTime);
         winEvents.Invoke();
     }

@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38c77adeff14d40b1d5295dbf8a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_Sctiptable: {fileID: 11400000, guid: 93e0a8c44139be7459b52ef5ec63222f, type: 2}
+  planetType: 7
   planetTemplate: {fileID: 1049776723839405491}
   parentRotation: {fileID: 3154012789412673558}
   rotationSpeed: 24
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38c77adeff14d40b1d5295dbf8a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_Sctiptable: {fileID: 11400000, guid: f20d0c39caeddb445831fd36b9e4df5e, type: 2}
+  planetType: 5
   planetTemplate: {fileID: 3886306619811424724}
   parentRotation: {fileID: 9047463129285445787}
   rotationSpeed: 47
@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38c77adeff14d40b1d5295dbf8a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_Sctiptable: {fileID: 11400000, guid: 6eea5c4aef844a34cacad1e172987871, type: 2}
+  planetType: 8
   planetTemplate: {fileID: 7698583214902486219}
   parentRotation: {fileID: 4444042315563666174}
   rotationSpeed: 19
@@ -780,7 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38c77adeff14d40b1d5295dbf8a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_Sctiptable: {fileID: 11400000, guid: b2c19ec11d1a3674292f67b6a8a841f9, type: 2}
+  planetType: 3
   planetTemplate: {fileID: 6532301495264716706}
   parentRotation: {fileID: 7193393795554477485}
   rotationSpeed: 107
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38c77adeff14d40b1d5295dbf8a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_Sctiptable: {fileID: 11400000, guid: b6c30b8a5e7014b4ea5f2fcef64f78bf, type: 2}
+  planetType: 2
   planetTemplate: {fileID: 1414792127072457920}
   parentRotation: {fileID: 3693599509776629287}
   rotationSpeed: 126
@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38c77adeff14d40b1d5295dbf8a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_Sctiptable: {fileID: 11400000, guid: aca3845373a4b254b8bc84c5f9c9cc65, type: 2}
+  planetType: 6
   planetTemplate: {fileID: 9001476214008217653}
   parentRotation: {fileID: 6967490400184722988}
   rotationSpeed: 34
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38c77adeff14d40b1d5295dbf8a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_Sctiptable: {fileID: 11400000, guid: 0d47ac9003146a3449cb7d25f3852bd5, type: 2}
+  planetType: 4
   planetTemplate: {fileID: 8081335362407731963}
   parentRotation: {fileID: 1697668885864378590}
   rotationSpeed: 86
@@ -1216,7 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d38c77adeff14d40b1d5295dbf8a048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_Sctiptable: {fileID: 11400000, guid: b74b31999884add4c8500d8a8523db68, type: 2}
+  planetType: 1
   planetTemplate: {fileID: 5759955974275845568}
   parentRotation: {fileID: 8190753558000451367}
   rotationSpeed: 172
@@ -1614,7 +1614,7 @@ MonoBehaviour:
   - {fileID: 1511710653757508399}
   - {fileID: 2792676899181703317}
   - {fileID: 3852757775190536698}
-  isActive: 
+  planetsNames: []
   isAllActive: 0
 --- !u!1 &7698583214902486219
 GameObject:
@@ -2004,7 +2004,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9196778782263063088}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.15384822, z: 0, w: 0.9880945}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1

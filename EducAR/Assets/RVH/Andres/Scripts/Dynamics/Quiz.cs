@@ -9,6 +9,7 @@ public class Quiz : MonoBehaviour
 {
     public static Quiz instance;
     [SerializeField] private GameObject[] objectsOfQuiz;
+    [SerializeField] private Transform[] pos;
     [SerializeField] private List<string> objectsNames;
     private GameObject objectSelected;
     private string nameSelected;
@@ -16,13 +17,14 @@ public class Quiz : MonoBehaviour
     [SerializeField] private Material materialSelected;
     [SerializeField] private Color[] checkColor;
     [SerializeField,Range(0,1)] private float waitToCheck;
-    [Space]
-    [SerializeField] private TextMeshProUGUI question;
-    [SerializeField] private UnityEvent eventOnCorrect;
 
     [Header("Question Maker")]
     [SerializeField] private string questionPart1;
     [SerializeField] private string questionPart2;
+    [SerializeField] private TextMeshProUGUI question;
+    [SerializeField] private UnityEvent eventOnCorrect;
+    [SerializeField] private bool hideObject;
+    private List<Transform> isTaken;
 
     void Awake()
     {
@@ -53,28 +55,34 @@ public class Quiz : MonoBehaviour
             {
                 if (objectSelected.name == nameSelected)
                 {
-                    materialSelected.color = checkColor[0];
+                    LevelManager.instance.ChangeColor(checkColor[0]);
+                    //materialSelected.color = checkColor[0];
 
                     objectsNames.Remove(nameSelected);
 
                     yield return Timing.WaitForSeconds(waitToCheck);
 
-                    objectSelected.SetActive(false);
-                    GenerateQuestion();
+                    if(hideObject)
+                        objectSelected.SetActive(false);
+
+                    eventOnCorrect.Invoke();
+                    //GenerateQuestion();
                 }
                 else
                 {
-                    materialSelected.color = checkColor[1];
+                    LevelManager.instance.ChangeColor(checkColor[1]);
+                    //materialSelected.color = checkColor[1];
                 }
             }
         }
         yield return Timing.WaitForSeconds(waitToCheck);
 
-        objectSelected.GetComponent<ObjectSelector>().OnSelectObject();
+        //objectSelected.GetComponent<ObjectSelector>().OnSelectObject();
+        TouchMananger.instance.UnSelectAll();
 
         objectSelected = null;
 
-        eventOnCorrect.Invoke();
+        //eventOnCorrect.Invoke();
     }
 
     public void GenerateQuestion()
@@ -82,15 +90,14 @@ public class Quiz : MonoBehaviour
         if (objectsNames.Count == 0)
         {
             LevelManager.instance.WinGame();
-            GameManager.instance.ActiveContinue(true);
-            eventOnCorrect.Invoke();
+            GameManager.instance.ActiveContinue(true);            
         }
         else
         {
             int random = Random.Range(0, objectsNames.Count);
             nameSelected = objectsNames[random];
 
-            question.text = questionPart1 + nameSelected + questionPart2;
+            question.text = questionPart1 + "<color=#0153ff>" + nameSelected + "</color>" + questionPart2;
         }
     }
 
@@ -105,4 +112,23 @@ public class Quiz : MonoBehaviour
         for (int i = 0;i < objectsOfQuiz.Length;i++)
             objectsOfQuiz[i].SetActive(false);
     }
+
+    #region Shuffle
+    public void Shuffle()
+    {
+        isTaken = new List<Transform>(pos);
+
+        foreach (GameObject objs in objectsOfQuiz)
+        {
+            int randomIdx = Random.Range(0, isTaken.Count);
+            Transform randomPos = isTaken[randomIdx];
+            objs.transform.SetParent(randomPos);
+
+            objs.transform.position = randomPos.position;
+            objs.transform.rotation = randomPos.rotation;
+
+            isTaken.RemoveAt(randomIdx);
+        }
+    }
+    #endregion
 }

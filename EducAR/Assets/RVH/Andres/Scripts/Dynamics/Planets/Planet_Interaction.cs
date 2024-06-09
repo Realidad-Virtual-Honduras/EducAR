@@ -7,11 +7,7 @@ using UnityEngine;
 
 public class Planet_Interaction : MonoBehaviour
 {
-    [SerializeField] Planet_Sctiptable planet_Sctiptable;
-    public Planet_Sctiptable Planet_Sctiptable
-    {
-        get { return planet_Sctiptable; }
-    }
+    public PlanetType planetType;
     [Space]
     [SerializeField] private GameObject planetTemplate;
     [SerializeField] private Transform parentRotation;
@@ -20,10 +16,13 @@ public class Planet_Interaction : MonoBehaviour
     private float time;
     [Space]
     public bool hasTheRightPlanet;
-
+    private Planet planet;
+    [SerializeField] private string planetName;
     private void Awake()
     {
         time = 0;
+        planet = FindObjectOfType<Planet>();
+        planetName = planetType.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,35 +31,9 @@ public class Planet_Interaction : MonoBehaviour
 
         if (obj.GetComponent<Planet_Mover>() != null)
         {
-            if(!hasTheRightPlanet)
-            {
-                if (obj.GetComponent<Planet_Mover>().Planet_Sctiptable.planet == planet_Sctiptable.planet)
-                {                    
-                    planetTemplate.GetComponent<MeshRenderer>().enabled = (false);
-                    hasTheRightPlanet = true;
-
-                    obj.transform.position = transform.position;
-                    obj.transform.rotation = transform.rotation;
-
-                    TouchMananger.instance.UnSelectAll(); 
-                    Planet.instance.CheckActives();
-
-                    obj.transform.SetParent(planetTemplate.gameObject.transform);
-                }
-            }
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        GameObject obj = other.gameObject;
-
-        if (obj.GetComponent<Planet_Mover>() != null)
-        {
-            if (hasTheRightPlanet)
-            {
-                obj.transform.position = transform.position;
-                obj.transform.rotation = transform.rotation;
+            if (planetType == obj.GetComponent<Planet_Mover>().planetType)
+            {                
+                Timing.RunCoroutine(SamePlanet(obj));
             }
         }
     }
@@ -71,13 +44,7 @@ public class Planet_Interaction : MonoBehaviour
 
         if (obj.GetComponent<Planet_Mover>() != null)
         {
-            //planetTemplate.SetActive(true);
-
-            if (obj.GetComponent<Planet_Mover>().Planet_Sctiptable.planet == planet_Sctiptable.planet)
-            {
-                hasTheRightPlanet = false;
-                Planet.instance.CheckActives();
-            }
+            planetTemplate.SetActive(true);
         }
     }
 
@@ -88,11 +55,32 @@ public class Planet_Interaction : MonoBehaviour
 
     private IEnumerator<float> StartRotation(float seconds)
     {
-        while(time <= 99999)
+        while(time <= 999999)
         {
             yield return Timing.WaitForSeconds(seconds);
             time += seconds;
             parentRotation.eulerAngles = new Vector3(0, rotationSpeed * time, 0);
         }
+    }
+
+    private IEnumerator<float> SamePlanet(GameObject obj)
+    {
+        obj.transform.SetParent(transform);
+        planetTemplate.SetActive(false);
+
+        obj.GetComponent<SphereCollider>().enabled = false;
+
+        obj.transform.position = transform.position;
+        obj.transform.rotation = transform.rotation;
+
+        planet.RemoveElement(planetName);
+
+        yield return Timing.WaitForSeconds(0.3f);
+
+        gameObject.GetComponent<SphereCollider>().enabled = false;
+
+        RotatePlanet();
+
+        planet.onCorrect.Invoke();
     }
 }
