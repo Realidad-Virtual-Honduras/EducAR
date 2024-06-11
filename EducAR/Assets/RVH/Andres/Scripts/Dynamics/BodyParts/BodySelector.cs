@@ -28,6 +28,13 @@ public class BodySelector : MonoBehaviour
     [Header("Events")]
     public UnityEvent placedObjectEvent;
 
+    [Header("Rotation element")]
+    [SerializeField] private Transform elementToRotate;
+    [SerializeField] private float curRotation;
+    [SerializeField] private float updateRotation;
+    [SerializeField] private float rotation;
+
+
     private GameObject bodyPartSelected;
     public string nameSelected;
     [SerializeField] private string nameSelectedSpaced;
@@ -60,7 +67,7 @@ public class BodySelector : MonoBehaviour
     {
         if (bodyPartsName.Count == 0)
         {
-            bodyAnimation.Play();
+            bodyAnimation.Play("idle");
             LevelManager.instance.WinGame();
             GameManager.instance.ActiveContinue(true);
         }
@@ -130,4 +137,13 @@ public class BodySelector : MonoBehaviour
 
         bodyPartsName.Clear();
     }
+
+    #region Rotation
+    public void RotateElement(float addRotation)
+    {
+        curRotation = elementToRotate.rotation.y;
+        rotation = curRotation + addRotation;
+        elementToRotate.rotation = Quaternion.Euler(0, rotation, 0);
+    }
+    #endregion
 }

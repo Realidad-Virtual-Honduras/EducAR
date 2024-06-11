@@ -73,13 +73,13 @@ public class Planet_Interaction : MonoBehaviour
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
 
+        RotatePlanet();
         planet.RemoveElement(planetName);
 
         yield return Timing.WaitForSeconds(0.3f);
 
         gameObject.GetComponent<SphereCollider>().enabled = false;
 
-        RotatePlanet();
 
         planet.onCorrect.Invoke();
     }

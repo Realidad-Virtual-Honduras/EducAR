@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
+[RequireComponent(typeof(SwipeDetection))]
 public class SwipeInput : MonoBehaviour
 {
     private SwipeDetection swipeDetection;
-    [SerializeField] private TextMeshProUGUI textMeshProUGUI;
+
+    [SerializeField] private UnityEvent swipeUpEvent;
+    [SerializeField] private UnityEvent swipeDownEvent;
+    [SerializeField] private UnityEvent swipeLeftEvent;
+    [SerializeField] private UnityEvent swipeRightEvent;
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,21 +37,21 @@ public class SwipeInput : MonoBehaviour
 
     private void OnUpSwipe()
     {
-        textMeshProUGUI.text = "Swipe Up";
+        swipeUpEvent.Invoke();
     }
 
     private void OnDownSwipe()
     {
-        textMeshProUGUI.text = "Swipe Down";
+        swipeDownEvent.Invoke();
     }
 
     private void OnLeftSwipe()
     {
-        textMeshProUGUI.text = "Swipe Left";
+        swipeLeftEvent.Invoke();
     }
 
     private void OnRightSwipe()
     {
-        textMeshProUGUI.text = "Swipe Right";
+        swipeRightEvent.Invoke();
     }
 }

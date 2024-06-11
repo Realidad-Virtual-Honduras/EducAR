@@ -2099,8 +2099,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3653883914825770913, guid: c67a6f0391fa90c4694d6d89ca1a199b,
         type: 3}
+      propertyPath: relative
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653883914825770913, guid: c67a6f0391fa90c4694d6d89ca1a199b,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653883914825770913, guid: c67a6f0391fa90c4694d6d89ca1a199b,
+        type: 3}
+      propertyPath: Use.RequiredFingerCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6866837369423518375, guid: c67a6f0391fa90c4694d6d89ca1a199b,
         type: 3}
