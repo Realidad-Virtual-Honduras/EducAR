@@ -17,8 +17,14 @@ public class LevelManager : MonoBehaviour
     #endregion
 
     [Header("Ui")]
-    public TextMeshProUGUI selectedObject;
+    public GameObject selectedObjectInfo;
+    public Image selectedObjectBg;
+    public TextMeshProUGUI selectedObjectTitle;
+    public TextMeshProUGUI selectedObjectDescription;
+    [Space]
+    public GameObject timerObj;
     public TextMeshProUGUI timerText;
+    [Space]
     public GameObject scanFloorInstruction;
 
     [Header("Time")]
@@ -46,19 +52,25 @@ public class LevelManager : MonoBehaviour
 
         uiManager = FindAnyObjectByType<UiManager>();
         uiManager.instructionsText.text = instruccion;
+        selectedObjectBg.color = uiManager.lightClassColor[uiManager.selectedIdx];
+        selectedObjectTitle.color = uiManager.darkTextClassColor[uiManager.selectedIdx];
 
         ScanObject(true);
         timerText.text = "";
+
+        ChangeColor(Color.white);
     }
 
     private void Start()
     {
+        selectedObjectTitle.color = uiManager.darkTextClassColor[uiManager.selectedIdx];
     }
 
     #region Timer
     public void StarTimer()
     {
         canInteract = true;
+        timerObj.SetActive(canInteract);
         Timing.RunCoroutine(TimerGlobal(timer), "Timer");
     }
 
@@ -87,12 +99,21 @@ public class LevelManager : MonoBehaviour
     private void EndGame()
     {
         canInteract = false;
+        timerObj.SetActive(canInteract);
         GameManager.instance.ActiveContinue(true);
     }
 
     public void ScanObject(bool active)
     {
+        timerObj.SetActive(false);
         scanFloorInstruction.SetActive(active);
+    }
+
+    public void SelectedObjectInfoShow(bool active, string title, string description)
+    {
+        selectedObjectInfo.SetActive(active);
+        selectedObjectTitle.text = title;
+        selectedObjectDescription.text = description;
     }
 
     #region Win And Lose
@@ -120,6 +141,11 @@ public class LevelManager : MonoBehaviour
     public void AlphaOffMat()
     {
         selectedMat.SetFloat("_Alpha", 0);
+    }
+
+    public void AlphaInMat(float alpha)
+    {
+        selectedMat.SetFloat("_AlphaCliping", alpha);
     }
 
     public void ChangeColor(Color color)

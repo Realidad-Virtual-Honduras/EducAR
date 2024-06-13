@@ -246,6 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 2411079469655315925}
+  objectInfo: "Saturno es un planeta de color amarillento y, junto a J\xFApiter,
+    el m\xE1s caliente. Lo m\xE1s especial de Saturno son sus famosos anillos compuestos
+    de rocas y agua helada. Alguno de sus sat\xE9lites naturales son Hyperion e Iapeto. 
+    Su nombre es en honor a Saturno, dios romano de la agricultura."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:

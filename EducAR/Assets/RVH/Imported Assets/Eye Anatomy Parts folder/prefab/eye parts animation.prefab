@@ -150,24 +150,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 4233590501176492859}
+  objectInfo: 
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1508262264957930846}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4953087294467066304}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -202,10 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: 
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079011
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,24 +342,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 2983818166738228695}
+  objectInfo: 
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4070561791773843099}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2379361583086607546}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -408,10 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: 
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079013
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,24 +534,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 5012482963209063880}
+  objectInfo: 
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7320795157622508280}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4844993350122694054}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -614,10 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: 
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079015
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,24 +726,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 8855405508514820181}
+  objectInfo: "Es un nervio sensitivo, tambi\xE9n conocido como segundo nervio craneal
+    o nervio craneal II, se encuentra en la parte posterior del ojo y su trabajo
+    es transferir informaci\xF3n visual desde la retina hacia el cerebro, a trav\xE9s
+    de impulsos el\xE9ctricos."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5694781316536218578}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4412068518092961953}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -820,13 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: "Es un nervio sensitivo, tambi\xE9n conocido como segundo nervio
-    craneal o nervio craneal II, se encuentra en la parte posterior del ojo y su
-    trabajo es transferir informaci\xF3n visual desde la retina hacia el cerebro,
-    a trav\xE9s de impulsos el\xE9ctricos."
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079019
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,24 +921,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 5522525927690013501}
+  objectInfo: 
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4922578827104094887}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 465435423437038170}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1029,10 +962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: 
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,24 +1113,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 6378269200762682991}
+  objectInfo: 
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5014710902667902015}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5546808313885784233}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1235,10 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: 
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,24 +1305,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 6344194622463532997}
+  objectInfo: 
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4300109129593626806}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1841562415839621282}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1441,10 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: 
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,24 +1497,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 5821551866816951476}
+  objectInfo: Arteria principal para suministrar sangre y oxigeno a la retina
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1403776995866216775}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6869330481490913968}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1647,10 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: Arteria principal para suministrar sangre y oxigeno a la retina
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,24 +1689,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 3658972256933875765}
+  objectInfo: "El iris act\xFAa como un diafragma del ojo que controla la cantidad
+    de luz que penetra en el \xF3rgano. Su reacci\xF3n ante los cambios de luz es
+    muy r\xE1pida, pero no inmediata."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4858646915600807102}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2073181892278651813}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1853,12 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: "El iris act\xFAa como un diafragma del ojo que controla la cantidad
-    de luz que penetra en el \xF3rgano. Su reacci\xF3n ante los cambios de luz es
-    muy r\xE1pida, pero no inmediata."
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079045
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,24 +1883,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 8275206544774403459}
+  objectInfo: "El iris es un tejido pigmentado formado por un tejido fibrovascular,
+    conocido como estroma. Este tejido se conecta a un musculo que controla la constricci\xF3n
+    de la pupila y la dilataci\xF3n de la misma."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4317150336167685552}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7838358811064122047}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2061,12 +1926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: "El iris es un tejido pigmentado formado por un tejido fibrovascular,
-    conocido como estroma. Este tejido se conecta a un musculo que controla la constricci\xF3n
-    de la pupila y la dilataci\xF3n de la misma."
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,24 +2129,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 274474275999894482}
+  objectInfo: "La c\xF3rnea es una c\xFApula transparente que descansa sobre la pupila,
+    el iris y la c\xE1mara anterior. Ayuda a enfocar el ojo a medida que la luz se
+    abre paso; es decir, permite la refracci\xF3n de luz y ayuda a que los ojos se
+    enfoquen en los objetos visibles."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 776523267300036262}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7525261065581595443}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2321,13 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: "La c\xF3rnea es una c\xFApula transparente que descansa sobre
-    la pupila, el iris y la c\xE1mara anterior. Ayuda a enfocar el ojo a medida que
-    la luz se abre paso; es decir, permite la refracci\xF3n de luz y ayuda a que
-    los ojos se enfoquen en los objetos visibles."
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079053
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,24 +2324,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 2906407934017533212}
+  objectInfo: "La coroides es una peque\xF1a capa vascular que se encuentra entre
+    la escler\xF3tica y la retina del ojo. Proporciona nutrientes y ox\xEDgeno a
+    las capas externas de la retina, a trav\xE9s de los vasos sangu\xEDneos."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7832750696240129786}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4196722738547421244}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2530,12 +2367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: "La coroides es una peque\xF1a capa vascular que se encuentra
-    entre la escler\xF3tica y la retina del ojo. Proporciona nutrientes y ox\xEDgeno
-    a las capas externas de la retina, a trav\xE9s de los vasos sangu\xEDneos."
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2686,24 +2518,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 6062666676500297886}
+  objectInfo: "La escler\xF3tica, com\xFAnmente conocida como la parte blanca de
+    los ojos, es la capa m\xE1s externa y m\xE1s dura que da forma al ojo. Esta capa
+    fibrosa contiene col\xE1geno y protege los componentes internos del ojo."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1401279636774498065}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7159396028533120906}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2738,12 +2561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: "La escler\xF3tica, com\xFAnmente conocida como la parte blanca
-    de los ojos, es la capa m\xE1s externa y m\xE1s dura que da forma al ojo. Esta
-    capa fibrosa contiene col\xE1geno y protege los componentes internos del ojo."
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,24 +2712,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 2835230026043518403}
+  objectInfo: Encargadas de suministrar sangre al ojo
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3749171215034022615}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3129478864105102515}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2946,10 +2753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: Encargadas de suministrar sangre al ojo
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,24 +2904,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 5298724628619461226}
+  objectInfo: "El cristalino le da al ojo el poder de refracci\xF3n o enfoque. Se
+    trata de un tejido fibroso que puede cambiar de forma para aumentar o disminuir
+    su poder. Debido a que cambia de forma, permite que el ojo se enfoque en objetos
+    intermedios y cercanos."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3100779569958849216}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 195772789205183171}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3152,13 +2948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: "El cristalino le da al ojo el poder de refracci\xF3n o enfoque.
-    Se trata de un tejido fibroso que puede cambiar de forma para aumentar o disminuir
-    su poder. Debido a que cambia de forma, permite que el ojo se enfoque en objetos
-    intermedios y cercanos."
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,24 +3099,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 8412073923956968467}
+  objectInfo: Ayuda en los movimientos descendentes y exterior del
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3311197782650025682}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2065708323986815317}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3361,10 +3140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: Ayuda en los movimientos descendentes y exterior del
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3515,24 +3291,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 7137840141508922664}
+  objectInfo: Ayuda en los movimiento hacia dentro
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 629953323640840639}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8886565281767846813}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3567,10 +3332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: Ayuda en los movimiento hacia dentro
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3721,24 +3483,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 7531388842107090530}
+  objectInfo: Ayuda en los movimiento hacia arriba
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6923548251650380869}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2846780840279756323}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3773,10 +3524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: Ayuda en los movimiento hacia arriba
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,24 +3675,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 4158414674649970948}
+  objectInfo: Ayuda en los movimientos asendentes y exterior
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3781485813411658726}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 184732647972228361}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3979,10 +3716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: Ayuda en los movimientos asendentes y exterior
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079069
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,24 +3867,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 167953814651556670}
+  objectInfo: Ayuda en los movimiento hacia abajo
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3195686143936751023}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9044867370007374134}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4185,10 +3908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: Ayuda en los movimiento hacia abajo
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &68016270000079071
 GameObject:
   m_ObjectHideFlags: 0
@@ -4339,24 +4059,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 6787029465233831042}
+  objectInfo: Ayuda en los movimiento hacia el exterior
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3363130980681771126}
         m_TargetAssemblyTypeName: ObjectSelector, Assembly-CSharp
         m_MethodName: OnSelectObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 375459545879566045}
-        m_TargetAssemblyTypeName: BodyPartInfo, Assembly-CSharp
-        m_MethodName: ShowInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4391,10 +4100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e57c74f4852b2742b58f36a92c4d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informationPart: Ayuda en los movimiento hacia el exterior
   startPos: {x: 0, y: 0, z: 0}
-  info: {fileID: 0}
-  infoText: {fileID: 0}
 --- !u!1 &167953814651556670
 GameObject:
   m_ObjectHideFlags: 0

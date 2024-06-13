@@ -10,6 +10,9 @@ public class ObjectSelector : MonoBehaviour
     public static ObjectSelector instance;
     [SerializeField] private GameObject select;
     [Space]
+    [Header("Information")]
+    public string objectInfo;
+    [Space]
     public UnityEvent eventOnSelect;
 
     private bool isSelected = true;

@@ -5,8 +5,8 @@ using UnityEngine.Events;
 using TMPro;
 using MEC;
 using UnityEditor;
-using Unity.VisualScripting;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class BodySelector : MonoBehaviour
 {
@@ -24,6 +24,7 @@ public class BodySelector : MonoBehaviour
     [SerializeField] private string questionPart1;
     [SerializeField] private string questionPart2;
     [SerializeField] private TextMeshProUGUI bodyQuestionText;
+    [SerializeField] private string colorN;
 
     [Header("Events")]
     public UnityEvent placedObjectEvent;
@@ -31,8 +32,6 @@ public class BodySelector : MonoBehaviour
     [Header("Rotation element")]
     [SerializeField] private Transform elementToRotate;
     [SerializeField] private float curRotation;
-    [SerializeField] private float updateRotation;
-    [SerializeField] private float rotation;
 
 
     private GameObject bodyPartSelected;
@@ -44,7 +43,16 @@ public class BodySelector : MonoBehaviour
         if (instance == null)
             instance = this;
 
-        SetEmptyAll();        
+        SetEmptyAll();
+        colorN = ColorToHexadecimal(UiManager.instance.darkTextClassColor[UiManager.instance.selectedIdx]);
+    }
+
+    private string ColorToHexadecimal(Color color)
+    {
+        int r = Mathf.RoundToInt(color.r * 255);
+        int g = Mathf.RoundToInt(color.g * 255);
+        int b = Mathf.RoundToInt(color.b * 255);
+        return $"#{r:X2}{g:X2}{b:X2}";
     }
 
     private void Start()
@@ -86,7 +94,7 @@ public class BodySelector : MonoBehaviour
 
             SpaceCapitals(nameSelected, true, true, false);
 
-            bodyQuestionText.text = questionPart1 + "<color=#0153ff>" + nameSelectedSpaced + "</color>" + questionPart2;
+            bodyQuestionText.text = questionPart1 + "<color=" + colorN + ">" + nameSelectedSpaced + "</color>" + questionPart2;
         }
     }
 
@@ -141,9 +149,8 @@ public class BodySelector : MonoBehaviour
     #region Rotation
     public void RotateElement(float addRotation)
     {
-        curRotation = elementToRotate.rotation.y;
-        rotation = curRotation + addRotation;
-        elementToRotate.rotation = Quaternion.Euler(0, rotation, 0);
+        curRotation = elementToRotate.transform.eulerAngles.y + addRotation;
+        elementToRotate.transform.eulerAngles = new Vector3(0, curRotation, 0);
     }
     #endregion
 }

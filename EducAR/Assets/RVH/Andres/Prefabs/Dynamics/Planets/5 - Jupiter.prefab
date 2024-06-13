@@ -245,6 +245,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 3886827993087643844}
+  objectInfo: "Es un planeta gigantesco: su tama\xF1o es 1300 veces mayor que la
+    Tierra. Tiene muchos sat\xE9lites naturales y los importantes son \xCDo, Europa,
+    Ganimedes y Calisto.  Su nombre es en honor a J\xFApiter, el dios m\xE1s importante
+    de la mitolog\xEDa romana."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:

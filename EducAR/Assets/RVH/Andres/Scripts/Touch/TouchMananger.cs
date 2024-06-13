@@ -26,6 +26,7 @@ public class TouchMananger : Singleton<TouchMananger>
     [SerializeField] private float distance;
     [SerializeField] private Transform objectPos;
     [SerializeField] private Transform originalParent;
+    [SerializeField] private bool useCenter;
 
     private bool isSelected;
     private ObjectSelector objectSelector;
@@ -49,7 +50,9 @@ public class TouchMananger : Singleton<TouchMananger>
 
     private void Start()
     {
-        LevelManager.instance.selectedObject.text = "";
+        LevelManager.instance.SelectedObjectInfoShow(false, "", "");
+
+        //LevelManager.instance.selectedObject.text = "";
         m_TouchControls.Touch.TouchPress.started += ctx => StartTouch(ctx);
         m_TouchControls.Touch.TouchPress.canceled += ctx => EndTouch(ctx);
         m_TouchControls.Touch.MultiTap.performed += ctx => MultiTappedPerformed(ctx);
@@ -102,10 +105,16 @@ public class TouchMananger : Singleton<TouchMananger>
             isSelected = true;
             lastObjectSelector = objectSelector;
             lastObjectSelector.gameObject.transform.SetParent(objectPos);
+            if(useCenter)
+            {
+                lastObjectSelector.gameObject.transform.position = objectPos.position;
+                lastObjectSelector.gameObject.transform.rotation = objectPos.rotation;
+            }    
             lastObjectSelector.eventOnSelect.Invoke();
         }
 
-        LevelManager.instance.selectedObject.text = lastObjectSelector.name;
+        LevelManager.instance.SelectedObjectInfoShow(true, lastObjectSelector.name, lastObjectSelector.objectInfo);
+        //LevelManager.instance.selectedObject.text = lastObjectSelector.name;
 
         //lastObjectSelector.gameObject.transform.position = objectPos.position;
 
@@ -122,7 +131,8 @@ public class TouchMananger : Singleton<TouchMananger>
     private void UnselectObject()
     {
         isSelected = false;
-        LevelManager.instance.selectedObject.text = "";
+        LevelManager.instance.SelectedObjectInfoShow(false, "", "");
+        //LevelManager.instance.selectedObject.text = "";
         lastObjectSelector.eventOnSelect.Invoke();
 
         lastObjectSelector.gameObject.transform.SetParent(null);
@@ -147,6 +157,17 @@ public class TouchMananger : Singleton<TouchMananger>
     {
         objectSelector = null;
         UnselectObject();
+    }
+    public void UnSelectAllNoParent()
+    {
+        objectSelector = null;
+        isSelected = false;
+        LevelManager.instance.SelectedObjectInfoShow(false, "", "");
+        //LevelManager.instance.selectedObject.text = "";
+        lastObjectSelector.eventOnSelect.Invoke();
+        lastObjectSelector = null;
+
+        Debug.Log("Se deselecciono el objeto " + lastObjectSelector.name);
     }
     #endregion
 

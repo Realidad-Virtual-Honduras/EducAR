@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public enum BodyPart_Eye
@@ -15,18 +16,22 @@ public class EyePart : MonoBehaviour
     [SerializeField] private string[] eyeAnimName;
     [SerializeField] private string[] eyeAnimAction;
     [SerializeField] private TextMeshProUGUI eyeActionText;
+    [SerializeField] private Image btnBg;
     [SerializeField] private GameObject btnChange;
-    private int curEyeAnimName;
+    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private int curEyeAnimName;
+    [SerializeField] private int curEyeAnimAction;
 
     // Start is called before the first frame update
     void Awake()
     {
         ActiveButton(false);
+        btnBg.color = UiManager.instance.darkTextClassColor[UiManager.instance.selectedIdx];
     }
 
     public void ActiveButton(bool active)
     {
-        btnChange.SetActive(active);
+       btnChange.SetActive(active);
     }
 
     public void ActiveAnimByName(string name)
@@ -35,10 +40,14 @@ public class EyePart : MonoBehaviour
     }
 
     public void ChangeAnim()
-    {
-        curEyeAnimName = (curEyeAnimName + 1) % eyeAnimName.Length;
+    { 
+        if(btnChange.gameObject.activeSelf)
+        {
+            curEyeAnimName = (curEyeAnimName + 1) % eyeAnimName.Length;
+            curEyeAnimAction = (curEyeAnimAction + 1) % eyeAnimAction.Length;
 
-        eyeAnim.Play(eyeAnimName[curEyeAnimName]);
-        eyeActionText.text = eyeAnimAction[curEyeAnimName];
+            eyeAnim.Play(eyeAnimName[curEyeAnimName]);
+            eyeActionText.text = eyeAnimAction[curEyeAnimAction];
+        }
     }
 }

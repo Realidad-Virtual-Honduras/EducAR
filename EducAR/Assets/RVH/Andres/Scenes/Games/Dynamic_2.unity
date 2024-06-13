@@ -4564,11 +4564,12 @@ MonoBehaviour:
   - {fileID: 1848325566}
   - {fileID: 6133115}
   objectsNames: []
+  objectSelected: {fileID: 0}
   materialSelected: {fileID: 2100000, guid: 911d0145c5d5a7345b4a92e90ce60871, type: 2}
   checkColor:
   - {r: 0.003921569, g: 0.3254902, b: 1, a: 1}
   - {r: 0.9176471, g: 0.10588236, b: 0.13725491, a: 1}
-  waitToCheck: 0.3
+  waitToCheck: 10
   questionPart1: "\xBFCual dinosaurio es el: "
   questionPart2: '? Selecciona el correcto.'
   question: {fileID: 2030507755}
@@ -5547,6 +5548,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1178171992043440662, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178171992043440662, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.224
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178171992043440662, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.399
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178171992043440662, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178171992043440662, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178171992043440662, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 1601010041776983099, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5615,7 +5646,7 @@ PrefabInstance:
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
       propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
@@ -5630,6 +5661,11 @@ PrefabInstance:
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
       propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
@@ -5654,6 +5690,11 @@ PrefabInstance:
       objectReference: {fileID: 762400719}
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
+      propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 762400719}
+    - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
       propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -5665,6 +5706,11 @@ PrefabInstance:
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
       propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
@@ -5681,6 +5727,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
       value: GenerateQuestion
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: Shuffle
       objectReference: {fileID: 0}
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
@@ -5704,6 +5755,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
+      propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: Quiz, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
       propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -5717,6 +5773,11 @@ PrefabInstance:
       propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2997504228888430001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: OnPlaceObject.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6592372624054400001, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
       propertyPath: m_IsActive
@@ -5726,6 +5787,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AR
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193167602616365014, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
+        type: 3}
+      propertyPath: useCenter
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7930693030875803447, guid: 6d7622072ff9b0449b9adbdbba0d4f31,
         type: 3}
@@ -5930,7 +5996,7 @@ MonoBehaviour:
     RequiredMouseButtons: 0
     RequiredSelectable: {fileID: 0}
   _camera: {fileID: 0}
-  relative: 0
+  relative: 1
   sensitivity: 1
   damping: -1
   remainingScale: {x: 0, y: 0, z: 0}

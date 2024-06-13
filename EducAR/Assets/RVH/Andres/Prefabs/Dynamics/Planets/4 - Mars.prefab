@@ -162,6 +162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 3528323286145255769}
+  objectInfo: "A Marte se le suele llamar \"planeta rojo\", l\xF3gicamente por su
+    aspecto rojizo.  Posee el volc\xE1n m\xE1s grande de los ocho planetas del Sistema
+    Solar. Uno de los grandes hallazgos cient\xEDficos de los \xFAltimos a\xF1os
+    ha sido encontrar en Marte agua subterr\xE1nea. Tiene dos sat\xE9lites llamados
+    Fobos y Deimos. Su nombre es en honor a Marte, dios romano de la guerra."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:

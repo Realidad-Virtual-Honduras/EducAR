@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4534727822066675969}
   - component: {fileID: 876922078220094068}
   - component: {fileID: 2491106764208445517}
+  - component: {fileID: 4929869539580873742}
   m_Layer: 0
   m_Name: Velociraptor
   m_TagString: Untagged
@@ -131,6 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 4556496968856768596}
+  objectInfo: "El velociraptor fue un dinosaurio dromeos\xE1urido que vivi\xF3 hace
+    75 millones de a\xF1os, durante el per\xEDodo Cret\xE1cico. Era b\xEDpedo y se
+    estima que ten\xEDa un cuerpo emplumado, muy similar al de las aves modernas."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
@@ -158,6 +162,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4929869539580873742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3855704601099820631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf1f3b450b32943a3507a525a7a6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPos: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &4556496968856768596
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,38 +38,39 @@ public class EyePart_Detector : MonoBehaviour
         GameObject obj = other.gameObject;
         if(obj.GetComponent<EyePart_Interactor>() != null)
         {
-            BodySelector.instance.bodyMaterialSelected.color = Color.white;
+            LevelManager.instance.ChangeColor(Color.white);
         }
     }
 
     private IEnumerator<float> IsCorrect(GameObject obj)
     {
-
-        obj.transform.SetParent(transform);
         gameObject.GetComponent<MeshRenderer>().enabled = false;
 
         obj.GetComponent<BoxCollider>().enabled = false;
 
+        obj.transform.SetParent(transform);
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
         obj.transform.localScale = transform.localScale;
 
-        yield return Timing.WaitForSeconds(0.3f);
+        LevelManager.instance.ChangeColor(Color.green);
+
+        yield return Timing.WaitForSeconds(0.7f);
 
         gameObject.GetComponent<BoxCollider>().enabled = false;
+        LevelManager.instance.ChangeColor(Color.white);
 
         bodySelector.placedObjectEvent.Invoke();
-        TouchMananger.instance.UnSelectAll();
     }
 
     private IEnumerator<float> IsNotCorrect(GameObject obj)
     {
-        BodySelector.instance.bodyMaterialSelected.color = Color.red;
+        LevelManager.instance.ChangeColor(Color.red);
 
         yield return Timing.WaitForSeconds(1f);
-        BodySelector.instance.bodyMaterialSelected.color = Color.white;
 
         obj.transform.position = obj.GetComponent<BodyPartInfo>().startPos;
+        LevelManager.instance.ChangeColor(Color.white);
         TouchMananger.instance.UnSelectAll();
     }
 }

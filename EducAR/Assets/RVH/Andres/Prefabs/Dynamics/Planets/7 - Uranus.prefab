@@ -268,6 +268,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 167331444166162910}
+  objectInfo: "Urano se caracteriza por ser un planeta muy fr\xEDo porque estar alejado
+    del Sol. Su eje de rotaci\xF3n est\xE1 muy inclinado, y se ve de color azulado
+    por los gases que forman su superficie.  Urano tambi\xE9n tiene un sistema de
+    anillos y unos cuantos sat\xE9lites naturales entre los que se encuentran Titania,
+    Ober\xF3n y Miranda.  Su nombre es en honor a Urano, dios romano del cielo."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:

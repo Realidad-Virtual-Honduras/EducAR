@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [Header("Persistent Objects")]
     [SerializeField] private GameObject[] persistentObjects = null;
 
+    public bool activeContinue = true;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void ActiveContinue(bool active)
     {
+        activeContinue = active;
         btn_Continue.SetActive(active);
     }
 }

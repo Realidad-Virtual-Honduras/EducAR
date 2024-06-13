@@ -23,6 +23,13 @@ public class Planet_Interaction : MonoBehaviour
         time = 0;
         planet = FindObjectOfType<Planet>();
         planetName = planetType.ToString();
+
+        RotatePlanet();
+    }
+
+    private void Start()
+    {
+        Timing.PauseCoroutines("Rotation:" + planetType);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,7 +57,7 @@ public class Planet_Interaction : MonoBehaviour
 
     public void RotatePlanet()
     {
-        Timing.RunCoroutine(StartRotation(timeToWait));
+        Timing.RunCoroutine(StartRotation(timeToWait), "Rotation:" + planetType);
     }
 
     private IEnumerator<float> StartRotation(float seconds)
@@ -65,6 +72,7 @@ public class Planet_Interaction : MonoBehaviour
 
     private IEnumerator<float> SamePlanet(GameObject obj)
     {
+        //obj.transform.SetParent(null);
         obj.transform.SetParent(transform);
         planetTemplate.SetActive(false);
 
@@ -73,7 +81,7 @@ public class Planet_Interaction : MonoBehaviour
         obj.transform.position = transform.position;
         obj.transform.rotation = transform.rotation;
 
-        RotatePlanet();
+        Timing.ResumeCoroutines("Rotation:" + planetType);
         planet.RemoveElement(planetName);
 
         yield return Timing.WaitForSeconds(0.3f);

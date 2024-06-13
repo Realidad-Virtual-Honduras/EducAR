@@ -162,6 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 6487105477654219727}
+  objectInfo: "Neptuno es  el m\xE1s alejado del Sol y esto lo convierte en el planeta
+    m\xE1s fr\xEDo del Sistema Solar. Tambi\xE9n, por el gas existente en su atm\xF3sfera,
+    se ve de color azul. Posee un sistema de cuatro anillos formados por part\xEDculas
+    de polvo.  Su nombre es en honor a Neptuno, dios romano de las aguas."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:

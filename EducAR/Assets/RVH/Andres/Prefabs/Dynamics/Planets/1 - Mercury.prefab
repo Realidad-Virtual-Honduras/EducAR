@@ -245,6 +245,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 2644849705190069606}
+  objectInfo: "Es el que est\xE1 m\xE1s cerca del Sol y tambi\xE9n el m\xE1s chiquit\xEDn.
+    Es un planeta sin sat\xE9lites en su \xF3rbita. Su superficie, cubierta de roca
+    y cr\xE1teres, se parece a la de la Luna.  Su nombre es en honor a Mercurio,
+    dios romano del comercio."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:

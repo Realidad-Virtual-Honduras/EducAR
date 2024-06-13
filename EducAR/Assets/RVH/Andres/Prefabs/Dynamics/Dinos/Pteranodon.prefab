@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5355716790184967419}
   - component: {fileID: 5367843366073013441}
   - component: {fileID: 2637971738605822749}
+  - component: {fileID: -6077136562419717151}
   m_Layer: 0
   m_Name: Pteranodon
   m_TagString: Untagged
@@ -97,6 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 6999718748957764947}
+  objectInfo: "El Pteranodon es el pterod\xE1ctilo m\xE1s conocido, ese que suele
+    venir a la mente al pensar en lo que muchos creen err\xF3neamente que fue un
+    dinosaurio volador. Sin embargo se trata de una especie en s\xED misma, que convivi\xF3
+    con los dinosaurios durante la era Mesozoica. Y este es en particular el m\xE1s
+    conocido."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
@@ -124,6 +130,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-6077136562419717151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6110503633065553391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf1f3b450b32943a3507a525a7a6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPos: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &6999718748957764947
 GameObject:
   m_ObjectHideFlags: 0

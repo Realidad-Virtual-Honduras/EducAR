@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 2083089763752863991}
   - component: {fileID: 6695284703574790244}
   - component: {fileID: 2514926570763218591}
+  - component: {fileID: 2246170733896131699}
   m_Layer: 0
   m_Name: Stegosaurus
   m_TagString: Untagged
@@ -163,6 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 2413517927144604524}
+  objectInfo: "El estegosaurio era realmente grande y de constituci\xF3n muy fuerte.
+    Ten\xEDa las extremidades delanteras cortas, la espalda redonda y las patas traseras
+    largas. El estegosaurio era el m\xE1s grande y uno de los tipos de dinosaurios
+    m\xE1s conocidos."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
@@ -190,6 +195,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2246170733896131699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8502571394398418486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf1f3b450b32943a3507a525a7a6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPos: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0}
 --- !u!1001 &723178855787453294
 PrefabInstance:
   m_ObjectHideFlags: 0

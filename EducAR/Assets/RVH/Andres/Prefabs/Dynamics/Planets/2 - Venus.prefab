@@ -245,6 +245,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 7357507740113096426}
+  objectInfo: "Es el que m\xE1s se parece a la Tierra. Est\xE1 cubierto de nubes
+    muy espesas que reflejan la luz solar, de modo que por la noche se ve brillante
+    y podemos distinguirlo a simple vista.  Su nombre es en honor a Venus, diosa
+    romana del amor."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:

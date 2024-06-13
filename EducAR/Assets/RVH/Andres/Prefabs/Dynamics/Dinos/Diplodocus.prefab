@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3382934355249799237}
   - component: {fileID: 4862300930979446586}
   - component: {fileID: 6636871293187639177}
+  - component: {fileID: 8032873430362640725}
   m_Layer: 0
   m_Name: Diplodocus
   m_TagString: Untagged
@@ -99,6 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 3347500473758142219}
+  objectInfo: "El Diplodocus fue uno de los dinosaurios m\xE1s grandes del Jur\xE1sico.
+    Ten\xEDa un cuello largo y una cola a\xFAn m\xE1s larga, que pod\xEDa usar como
+    l\xE1tigo. Es uno de los dinosaurios de pescuezo extenso m\xE1s conocidos de
+    nuestro tiempo."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
@@ -126,6 +131,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8032873430362640725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566335824052410315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf1f3b450b32943a3507a525a7a6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPos: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &2009589564775988774
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Diplodocus (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 16ce483a36b27724e9bb48e5a60eca89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

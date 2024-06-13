@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5187002981712654104}
   - component: {fileID: 734516209215397014}
   - component: {fileID: 6670532068370804279}
+  - component: {fileID: -4000297901825682881}
   m_Layer: 0
   m_Name: Brachiosaurus
   m_TagString: Untagged
@@ -99,6 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 4859444731974137787}
+  objectInfo: "El Brachiosaurio era vegetariano. Pod\xEDa ser m\xE1s grande que una
+    gr\xFAa mec\xE1nica y pesar unas 60 toneladas. Vivi\xF3 en el jur\xE1sico. Y
+    las particularidades del ambiente facilitaban la existencia de un animal de su
+    tama\xF1o: las altas temperaturas, la humedad, la escasez de depredadores y la
+    abundancia de alimentos."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
@@ -126,6 +132,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-4000297901825682881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4804709427008372347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf1f3b450b32943a3507a525a7a6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPos: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &4859444731974137787
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Brachiosaurus altithorax (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e1e8316c883d5fa498237f659b2a25f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2580447933110786485, guid: e1e8316c883d5fa498237f659b2a25f7,
         type: 3}

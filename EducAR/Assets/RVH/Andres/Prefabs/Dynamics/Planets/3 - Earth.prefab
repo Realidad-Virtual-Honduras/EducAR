@@ -245,6 +245,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 6645460443923362691}
+  objectInfo: "La Tierra es nuestro maravilloso planeta, el lugar donde vivimos.
+    Es el \xFAnico habitado gracias a que se dan las condiciones perfectas para ello:
+    posici\xF3n en relaci\xF3n al Sol, luz, temperatura, etc.  La Tierra no es una
+    esfera perfecta porque est\xE1 achatada por los polos. Est\xE1 compuesta por
+    tres capas: corteza, manto y n\xFAcleo.  El 70% de su superficie est\xE1 cubierta
+    de agua y por eso se ve azul desde el espacio. Su sat\xE9lite natural es la Luna. 
+    Su nombre es en honor a Terra, diosa romana que personifica la Tierra."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:

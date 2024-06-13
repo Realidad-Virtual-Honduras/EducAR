@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7872156923401880197}
   - component: {fileID: 6650376220428547927}
   - component: {fileID: 6980478138658738454}
+  - component: {fileID: -1479571434857794029}
   m_Layer: 0
   m_Name: Spinosaurus
   m_TagString: Untagged
@@ -131,6 +132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   select: {fileID: 8170307361787656168}
+  objectInfo: "El Spinosaurus fue el dinosaurio carn\xEDvoro ter\xF3podo m\xE1s grande
+    conocido. Se caracteriz\xF3 por su solapa dorsal y su hocico estrecho. Fue el
+    \xFAnico depredador que vivi\xF3 parcialmente en el agua, y que cazaba all\xED."
   eventOnSelect:
     m_PersistentCalls:
       m_Calls:
@@ -158,6 +162,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-1479571434857794029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567678766200382290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dddf1f3b450b32943a3507a525a7a6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPos: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0}
 --- !u!1 &8170307361787656168
 GameObject:
   m_ObjectHideFlags: 0
