@@ -8,7 +8,7 @@ public class ShuffleElements : MonoBehaviour
     public static ShuffleElements instance;
 
     [Header("Objects To Shuffle")]
-    [SerializeField] private GameObject[] objects;
+    public GameObject[] objects;
 
     [Header("Shuffle Spects")]
     [SerializeField] private Transform[] pos;

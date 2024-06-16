@@ -6,8 +6,8 @@ using UnityEngine.UI;
 using TMPro;
 
 public enum BodyPart_Eye
-{OblicuoSuperior, OblicuoInferior, RectoSuperior, RectoInferior, RectoInterior, RectoExterior,
- IrisExterior, IrisInterior, Cornea, Coroides, Esclerotica, Venas, Cristalino, ArteriaDeRetina,
+{MúsculoOblicuoSuperior, MúsculoOblicuoInferior, MúsculoRectoSuperior, MúsculoRectoInferior, MúsculoRectoInterior, MúsculoRectoExterior,
+ Iris, EstromaDelIris, Cornea, Coroides, Esclerotica, Venas, Cristalino, ArteriaDeRetina,
  NervioOptico, VasoSanguineoSuperior, VasoSanguineoInferior, VenasDeRetina, NervioSuperior, 
  NervioInferior, Nervio}
 public class EyePart : MonoBehaviour

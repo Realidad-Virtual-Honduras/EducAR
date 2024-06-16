@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
+using MEC;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
-using TMPro;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems; 
 
@@ -27,6 +27,12 @@ public class TouchMananger : Singleton<TouchMananger>
     [SerializeField] private Transform objectPos;
     [SerializeField] private Transform originalParent;
     [SerializeField] private bool useCenter;
+
+    [Header("Rotation")]
+    [SerializeField] private bool useRotation;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float timeToWaitRotation = 0.02f;
+    private float time;
 
     private bool isSelected;
     private ObjectSelector objectSelector;
@@ -56,6 +62,9 @@ public class TouchMananger : Singleton<TouchMananger>
         m_TouchControls.Touch.TouchPress.started += ctx => StartTouch(ctx);
         m_TouchControls.Touch.TouchPress.canceled += ctx => EndTouch(ctx);
         m_TouchControls.Touch.MultiTap.performed += ctx => MultiTappedPerformed(ctx);
+
+        if (useRotation)
+            Timing.RunCoroutine(StartRotation(timeToWaitRotation), "RotationCenter");
     }
 
     #region Raycast
@@ -170,6 +179,16 @@ public class TouchMananger : Singleton<TouchMananger>
         Debug.Log("Se deselecciono el objeto " + lastObjectSelector.name);
     }
     #endregion
+
+    private IEnumerator<float> StartRotation(float seconds)
+    {
+        while (time <= 999999)
+        {
+            yield return Timing.WaitForSeconds(seconds);
+            time += seconds;
+            objectPos.eulerAngles = new Vector3(0, rotationSpeed * time, 0);
+        }
+    }
 
     private void PinchScale()
     {

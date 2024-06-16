@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using MEC;
+using Lean.Touch;
 
 public class EyePart_Detector : MonoBehaviour
 {
@@ -20,56 +21,72 @@ public class EyePart_Detector : MonoBehaviour
         bodySelector = FindObjectOfType<BodySelector>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void CorrectDetection(GameObject obj)
     {
-        GameObject obj = other.gameObject;
-
-        if(obj.GetComponent<EyePart_Interactor>() != null)
-        {
-            if (BodySelector.instance.nameSelected == obj.GetComponent<EyePart_Interactor>().bodyPartEye.ToString())
-                Timing.RunCoroutine(IsCorrect(obj));
-            else
-                Timing.RunCoroutine(IsNotCorrect(obj));
-        }
+        Timing.RunCoroutine(IsCorrect(obj));
     }
 
-    private void OnTriggerExit(Collider other) 
+    public void IncorrectDetection(GameObject obj)
     {
-        GameObject obj = other.gameObject;
-        if(obj.GetComponent<EyePart_Interactor>() != null)
-        {
-            LevelManager.instance.ChangeColor(Color.white);
-        }
+        Timing.RunCoroutine(IsNotCorrect(obj));
     }
 
     private IEnumerator<float> IsCorrect(GameObject obj)
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        LevelManager.instance.ChangeColor(Color.green);
+        LevelManager.instance.ShowQuestion(false);
 
         obj.GetComponent<BoxCollider>().enabled = false;
+        obj.GetComponent<LeanPinchScale>().enabled = true;
 
-        obj.transform.SetParent(transform);
-        obj.transform.position = transform.position;
-        obj.transform.rotation = transform.rotation;
-        obj.transform.localScale = transform.localScale;
+        LevelManager.instance.AlphaInMat(1.1f);
+        bodySelector.OnCorrect();
 
-        LevelManager.instance.ChangeColor(Color.green);
+        Timing.PauseCoroutines("Timer");
 
-        yield return Timing.WaitForSeconds(0.7f);
+        yield return Timing.WaitForSeconds(10f);
 
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+
+        Timing.ResumeCoroutines("Timer");
+
+        obj.GetComponent<LeanPinchScale>().enabled = false;
+
+        LevelManager.instance.AlphaInMat(0f);
+
         LevelManager.instance.ChangeColor(Color.white);
 
+        obj.GetComponent<EyePart_Interactor>().lookAt.startUi(true);
+
+        for (int i = 0; i < bodySelector.finalPos.Length; i++)
+        {
+            if (obj.GetComponent<EyePart_Interactor>().bodyPartEye == bodyPartEye)
+            {
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+                obj.transform.SetParent(transform);
+
+                obj.transform.position = Vector3.Lerp(obj.transform.position, transform.position, 10f * Time.fixedDeltaTime);
+                //obj.transform.position = transform.position;
+                obj.transform.rotation = Quaternion.Slerp(obj.transform.rotation, transform.rotation, 10f * Time.fixedDeltaTime);
+                //obj.transform.rotation = transform.rotation;
+                obj.transform.localScale = Vector3.Lerp(obj.transform.localScale, transform.localScale, 10f * Time.fixedDeltaTime);
+                //obj.transform.localScale = transform.localScale;
+            }
+        }        
+
+        bodySelector.GenerateQuestion();
         bodySelector.placedObjectEvent.Invoke();
     }
+
+
 
     private IEnumerator<float> IsNotCorrect(GameObject obj)
     {
         LevelManager.instance.ChangeColor(Color.red);
-
-        yield return Timing.WaitForSeconds(1f);
-
         obj.transform.position = obj.GetComponent<BodyPartInfo>().startPos;
+
+        yield return Timing.WaitForSeconds(0.05f);
+
         LevelManager.instance.ChangeColor(Color.white);
         TouchMananger.instance.UnSelectAll();
     }

@@ -6,9 +6,6 @@ using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using TMPro;
-using EnhandedTouch = UnityEngine.InputSystem.EnhancedTouch;
-using Unity.VisualScripting;
-using UnityEngine.EventSystems;
 
 public class PlaceOnPlane : MonoBehaviour
 {
@@ -60,28 +57,6 @@ public class PlaceOnPlane : MonoBehaviour
         }
 
         spawnedObject.SetActive(false);
-    }
-
-    private void OnEnable()
-    {
-        EnhandedTouch.TouchSimulation.Enable();
-        EnhandedTouch.EnhancedTouchSupport.Enable();
-        EnhandedTouch.Touch.onFingerDown += FingerDown;
-    }
-
-    private void OnDisable()
-    {
-        EnhandedTouch.TouchSimulation.Disable();
-        EnhandedTouch.EnhancedTouchSupport.Disable();
-        EnhandedTouch.Touch.onFingerDown -= FingerDown;
-    }
-
-    private void FingerDown(EnhandedTouch.Finger finger)
-    {
-        if (finger.index != 0)
-            return;
-
-        //StartGame();       
     }
 
     public void StartGame(Vector2 pos)

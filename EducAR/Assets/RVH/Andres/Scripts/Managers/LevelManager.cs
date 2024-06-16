@@ -8,6 +8,7 @@ using DG.Tweening;
 using MEC;
 using UnityEngine.XR.ARFoundation;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 
 public class LevelManager : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class LevelManager : MonoBehaviour
     public Image selectedObjectBg;
     public TextMeshProUGUI selectedObjectTitle;
     public TextMeshProUGUI selectedObjectDescription;
+    [Space]
+    public GameObject questionObject;
     [Space]
     public GameObject timerObj;
     public TextMeshProUGUI timerText;
@@ -40,6 +43,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("FX")]
     public Material selectedMat;
+    public string colorImporantWord;
 
     [HideInInspector] public float curTime;
     [HideInInspector] public bool canInteract;
@@ -50,8 +54,11 @@ public class LevelManager : MonoBehaviour
         if(instance == null)
             instance = this;
 
+        ShowQuestion(false);
+
         uiManager = FindAnyObjectByType<UiManager>();
         uiManager.instructionsText.text = instruccion;
+        colorImporantWord = ColorToHexadecimal(uiManager.darkTextClassColor[uiManager.selectedIdx]);
         selectedObjectBg.color = uiManager.lightClassColor[uiManager.selectedIdx];
         selectedObjectTitle.color = uiManager.darkTextClassColor[uiManager.selectedIdx];
 
@@ -64,6 +71,14 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         selectedObjectTitle.color = uiManager.darkTextClassColor[uiManager.selectedIdx];
+    }
+
+    private string ColorToHexadecimal(Color color)
+    {
+        int r = Mathf.RoundToInt(color.r * 255);
+        int g = Mathf.RoundToInt(color.g * 255);
+        int b = Mathf.RoundToInt(color.b * 255);
+        return $"#{r:X2}{g:X2}{b:X2}";
     }
 
     #region Timer
@@ -107,6 +122,11 @@ public class LevelManager : MonoBehaviour
     {
         timerObj.SetActive(false);
         scanFloorInstruction.SetActive(active);
+    }
+
+    public void ShowQuestion(bool active)
+    {
+        questionObject.SetActive(active);
     }
 
     public void SelectedObjectInfoShow(bool active, string title, string description)

@@ -28,7 +28,7 @@ public class ObjectSelector : MonoBehaviour
     public void OnSelectObject()
     {
         isSelected = !isSelected;
-        Debug.Log(gameObject.name + " is: " + isSelected);
+        //Debug.Log(gameObject.name + " is: " + isSelected);
 
         select.SetActive(isSelected);
     }

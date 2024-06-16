@@ -57,6 +57,7 @@ public class Quiz : MonoBehaviour
                 if (objectSelected.name == nameSelected)
                 {
                     LevelManager.instance.ChangeColor(checkColor[0]);
+                    LevelManager.instance.ShowQuestion(false);
                     //materialSelected.color = checkColor[0];
                     ChangeStatus(false);
 
@@ -118,7 +119,7 @@ public class Quiz : MonoBehaviour
             int random = Random.Range(0, objectsNames.Count);
             nameSelected = objectsNames[random];
 
-            question.text = questionPart1 + "<color=#0153ff>" + nameSelected + "</color>" + questionPart2;
+            question.text = questionPart1 + "<color=" + LevelManager.instance.colorImporantWord + ">" + nameSelected + "</color>" + questionPart2;
         }
     }
 

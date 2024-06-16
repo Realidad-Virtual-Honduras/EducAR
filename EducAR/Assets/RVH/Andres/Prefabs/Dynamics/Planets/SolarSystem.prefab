@@ -380,7 +380,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2792676899181703317
 MonoBehaviour:
@@ -400,6 +400,7 @@ MonoBehaviour:
   rotationSpeed: 24
   timeToWait: 0
   hasTheRightPlanet: 0
+  planetName: 
 --- !u!54 &5019991141844031189
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -481,7 +482,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7032919158194012419
 MonoBehaviour:
@@ -501,6 +502,7 @@ MonoBehaviour:
   rotationSpeed: 47
   timeToWait: 0
   hasTheRightPlanet: 0
+  planetName: 
 --- !u!54 &5367362728062666695
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -582,7 +584,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3852757775190536698
 MonoBehaviour:
@@ -602,6 +604,7 @@ MonoBehaviour:
   rotationSpeed: 19
   timeToWait: 0
   hasTheRightPlanet: 0
+  planetName: 
 --- !u!54 &4704567851999113379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -766,7 +769,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8031896833935841390
 MonoBehaviour:
@@ -786,6 +789,7 @@ MonoBehaviour:
   rotationSpeed: 107
   timeToWait: 0
   hasTheRightPlanet: 0
+  planetName: 
 --- !u!54 &5408379260330498399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -867,7 +871,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2500198696748709778
 MonoBehaviour:
@@ -887,6 +891,7 @@ MonoBehaviour:
   rotationSpeed: 126
   timeToWait: 0
   hasTheRightPlanet: 0
+  planetName: 
 --- !u!54 &5297845023446018909
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -968,7 +973,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1511710653757508399
 MonoBehaviour:
@@ -988,6 +993,7 @@ MonoBehaviour:
   rotationSpeed: 34
   timeToWait: 0
   hasTheRightPlanet: 0
+  planetName: 
 --- !u!54 &6851649045772270321
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1069,7 +1075,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3043333521700896772
 MonoBehaviour:
@@ -1089,6 +1095,7 @@ MonoBehaviour:
   rotationSpeed: 86
   timeToWait: 0
   hasTheRightPlanet: 0
+  planetName: 
 --- !u!54 &3078477657397591511
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1202,7 +1209,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1771208521463727448
 MonoBehaviour:
@@ -1222,6 +1229,7 @@ MonoBehaviour:
   rotationSpeed: 172
   timeToWait: 0
   hasTheRightPlanet: 0
+  planetName: 
 --- !u!54 &7628385730721978711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1615,7 +1623,12 @@ MonoBehaviour:
   - {fileID: 2792676899181703317}
   - {fileID: 3852757775190536698}
   planetsNames: []
+  onCorrect:
+    m_PersistentCalls:
+      m_Calls: []
   isAllActive: 0
+  toggle: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &7698583214902486219
 GameObject:
   m_ObjectHideFlags: 0

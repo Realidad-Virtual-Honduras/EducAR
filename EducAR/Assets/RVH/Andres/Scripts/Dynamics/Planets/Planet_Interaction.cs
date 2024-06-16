@@ -86,6 +86,8 @@ public class Planet_Interaction : MonoBehaviour
 
         yield return Timing.WaitForSeconds(0.3f);
 
+        obj.GetComponentInChildren<UiLookAt>().startUi(true);
+
         gameObject.GetComponent<SphereCollider>().enabled = false;
 
 
