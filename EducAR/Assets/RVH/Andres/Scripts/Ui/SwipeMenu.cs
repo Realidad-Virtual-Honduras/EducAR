@@ -26,8 +26,12 @@ public class SwipeMenu : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private GameObject[] changingButtons = null;
 
+    [Header(("Scroll"))] 
     public float scrollPos = 0f;
     [SerializeField] private float[] currentPos;
+
+    [Header(("Events"))]
+    [SerializeField] private UnityEvent touchHold;
 
     private int swapButton = 0;
 
@@ -41,6 +45,7 @@ public class SwipeMenu : MonoBehaviour
 
         contentSizeFitter = GetComponent<ContentSizeFitter>();
         horizontalLayoutGroup = GetComponent<HorizontalLayoutGroup>();
+        swipeDetection = FindAnyObjectByType<SwipeDetection>();
     }
 
     private void Start()
@@ -68,9 +73,13 @@ public class SwipeMenu : MonoBehaviour
             for (int i = 0; i < currentPos.Length; i++)
                 currentPos[i] = distance * i;
 
+            //if (Input.touchCount > 0)
             if (Input.GetMouseButton(0))
             {
-                scrollPos = scrollbar.value;
+                //Touch touch = Input.GetTouch(0);
+
+                //if(touch.phase == TouchPhase.Moved)
+                    scrollPos = scrollbar.value;
             }
             else
             {
@@ -124,5 +133,23 @@ public class SwipeMenu : MonoBehaviour
     {
         swapButton--;
         scrollPos = currentPos[swapButton];
+    }
+
+    private SwipeDetection swipeDetection;
+    [SerializeField] private bool active;
+
+    private void OnEnable()
+    {
+        swipeDetection.onTapped += TapScreen;
+    }
+
+    private void OnDisable() 
+    {
+        swipeDetection.onTapped -= TapScreen;
+    }
+
+    public void TapScreen()
+    {
+        active = !active;
     }
 }

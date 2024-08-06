@@ -76,12 +76,12 @@ public class UiManagerCreativeMode : MonoBehaviour
         if(showCategory)
         {
             categotyObjects.transform.DOLocalMoveY(categoryNTypeHide, timer);
-            UiManagerCreativeMode.instance.titleOptions.text = "Objetos";
+            titleOptions.text = "Objetos";
         }
         else
         {
             categotyObjects.transform.DOLocalMoveY(-categoryNTypeHide, timer);
-            UiManagerCreativeMode.instance.titleOptions.text = "Material";
+            titleOptions.text = "Material";
         }
 
         ShowNHydeType();
@@ -100,10 +100,14 @@ public class UiManagerCreativeMode : MonoBehaviour
     }
 
 
-    private void RestartAllScrollPos()
+    public void RestartAllScrollPos()
     {
         for (int i = 0; i < swipeMenus.Length; i++)
             swipeMenus[i].scrollPos = 0;
     }
    
+    public void ChangeTitle(string title)
+    {
+        titleOptions.text = title;
+    }
 }

@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
-
+using UnityEngine.Rendering;
 
 public class UiMediator : MonoBehaviour
 {
-
     public static UiMediator instance;
 
     private void Awake()
@@ -20,6 +19,7 @@ public class UiMediator : MonoBehaviour
     [SerializeField] private Mediator[] mediators;
     private int currentIdx = 0;
     private int lastIdx = 0;
+    private bool activeSwitch = false;
     #endregion
 
     #region Getter
@@ -45,6 +45,26 @@ public class UiMediator : MonoBehaviour
         mediators[currentIdx].ShowUi();
 
         lastIdx = currentIdx;
+    }
+
+    public void ShowPanel(int idx)
+    {
+        mediators[idx].ShowUi();
+    }
+
+    public void HidePanel(int idx) 
+    {
+        mediators[idx].HideUi();
+    }
+
+    public void CanSwitchSamePanel(int idx)
+    {
+        activeSwitch = !activeSwitch;
+
+        if (activeSwitch)
+            mediators[idx].ShowUi();
+        else
+            mediators[idx].HideUi();
     }
     #endregion
 }

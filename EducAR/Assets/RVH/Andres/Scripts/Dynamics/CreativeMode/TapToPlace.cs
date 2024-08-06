@@ -55,8 +55,6 @@ public class TapToPlace : MonoBehaviour
 
                         //Invoke
                         eventsActions.Invoke();
-
-                        CreateObjects.instance.canCreateObject = false;
                     }
                     else
                     {

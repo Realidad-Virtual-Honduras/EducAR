@@ -14,7 +14,6 @@ public class CreateObjects : MonoBehaviour
     public bool canCreateObject;
     [HideInInspector] public int amountCreated;
     public int maxAmount;
-    [SerializeField] private ObjectTypes[] types;
     [SerializeField] private NewTypeImages[] newTypeImages;    
 
     [HideInInspector] public int selectedType, selectedCategory;
@@ -30,7 +29,7 @@ public class CreateObjects : MonoBehaviour
 
     public void CreateObject(Vector3 pos, Quaternion rotation)
     {
-        Instantiate(types[selectedCategory].objectType[selectedType], pos, rotation, transform);
+        Instantiate(newTypeImages[selectedCategory].typeVariant[selectedType], pos, rotation, transform);
     }
 
     public void SetType(int type)
@@ -54,7 +53,7 @@ public class CreateObjects : MonoBehaviour
         {
             UiManagerCreativeMode.instance.btnsAcitve[i].SetActive(false);
 
-            if (i <= newTypeImages[selectedCategory].spriteType.Length - 1)
+            if (i <= newTypeImages[selectedCategory].typeVariant.Length - 1)
             {
                 UiManagerCreativeMode.instance.btnsAcitve[i].SetActive(true);
                 UiManagerCreativeMode.instance.imageType[i].sprite = newTypeImages[selectedCategory].spriteType[i];
@@ -65,16 +64,10 @@ public class CreateObjects : MonoBehaviour
 }
 
 [System.Serializable]
-public class ObjectTypes
-{
-    public string typeName;
-    public GameObject[] objectType;
-}
-
-[System.Serializable]
 public class NewTypeImages
 {
     public string tName;
-    public Sprite[] spriteType;
     public string[] typeNames;
+    public Sprite[] spriteType;
+    public GameObject[] typeVariant;
 }
