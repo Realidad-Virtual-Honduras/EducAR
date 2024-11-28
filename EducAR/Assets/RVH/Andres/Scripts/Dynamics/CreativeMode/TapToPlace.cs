@@ -28,6 +28,7 @@ public class TapToPlace : MonoBehaviour
         EnhandedTouch.TouchSimulation.Enable();
         EnhandedTouch.EnhancedTouchSupport.Enable();
         EnhandedTouch.Touch.onFingerDown += FingerDown;
+        EnhandedTouch.Touch.onFingerUp += FingerUp;
     }
 
     private void OnDisable()
@@ -35,6 +36,7 @@ public class TapToPlace : MonoBehaviour
         EnhandedTouch.TouchSimulation.Disable();
         EnhandedTouch.EnhancedTouchSupport.Disable();
         EnhandedTouch.Touch.onFingerDown -= FingerDown;
+        EnhandedTouch.Touch.onFingerUp -= FingerUp;
     }
 
     private void FingerDown(EnhandedTouch.Finger finger)
@@ -48,7 +50,24 @@ public class TapToPlace : MonoBehaviour
             {
                 foreach (ARRaycastHit hit in hitList)
                 {
-                    if(CreateObjects.instance.amountCreated >= CreateObjects.instance.maxAmount)
+                        Pose pose = hit.pose;
+                        //CreateObjects.instance.CreateObject(pose.position, pose.rotation);
+                        PhysicalObjectFactory.Instance.CreateObject(CategoryManager.Instance.objectDataPublic().objectData, pose.position, pose.rotation, transform);
+                        CreateObjects.instance.amountCreated++;
+                }
+            }
+        }
+    }
+
+    private void FingerUp(EnhandedTouch.Finger finger)
+    {
+        if (CreateObjects.instance.canCreateObject)
+        {
+            if (raycastManager.Raycast(finger.currentTouch.screenPosition, hitList, TrackableType.PlaneWithinPolygon))
+            {
+                foreach (ARRaycastHit hit in hitList)
+                {
+                    if (CreateObjects.instance.amountCreated >= CreateObjects.instance.maxAmount)
                     {
                         UiManagerCreativeMode.instance.ShowNHydeCreation();
                         CreateObjects.instance.amountCreated = 0;
@@ -56,16 +75,6 @@ public class TapToPlace : MonoBehaviour
                         //Invoke
                         eventsActions.Invoke();
                     }
-                    else
-                    {
-                        Pose pose = hit.pose;
-                        CreateObjects.instance.CreateObject(pose.position, pose.rotation);
-                        CreateObjects.instance.amountCreated++;
-
-                        if (planeManager.GetPlane(hit.trackableId).alignment == PlaneAlignment.HorizontalUp)
-                        {
-                        }
-                    }    
                 }
             }
         }
