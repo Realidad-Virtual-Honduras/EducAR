@@ -50,10 +50,10 @@ public class TapToPlace : MonoBehaviour
             {
                 foreach (ARRaycastHit hit in hitList)
                 {
-                        Pose pose = hit.pose;
-                        //CreateObjects.instance.CreateObject(pose.position, pose.rotation);
-                        PhysicalObjectFactory.Instance.CreateObject(CategoryManager.Instance.objectDataPublic().objectData, pose.position, pose.rotation, transform);
-                        CreateObjects.instance.amountCreated++;
+                    Pose pose = hit.pose;
+                    //CreateObjects.instance.CreateObject(pose.position, pose.rotation);
+                    PhysicalObjectFactory.Instance.CreateObject(CategoryManager.Instance.SelectedMaterial().objectData, pose.position, pose.rotation, transform);
+                    CreateObjects.instance.amountCreated++;
                 }
             }
         }

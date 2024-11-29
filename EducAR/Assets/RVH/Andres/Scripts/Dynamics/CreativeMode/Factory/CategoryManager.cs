@@ -14,26 +14,31 @@ public class CategoryManager : MonoBehaviour
 
     public static CategoryManager Instance;
 
-    [SerializeField] private PhysicalObjectFactory objectFactory;
     [SerializeField] private UiMediator uiMediator;
 
     //Prefabs Ui
-    [SerializeField] private Transform btn_categoryPrefab;
-    [SerializeField] private Transform btn_objectPrefab;
-    [SerializeField] private Transform btn_materialPrefab;
+    [SerializeField] private Transform btn_CreationPrefab;
 
-    //Scroll view containers
-    [SerializeField] private Transform sv_Category;
-    [SerializeField] private Transform sv_Objects;
-    [SerializeField] private Transform sv_Material;
-    [Space]
+    //Creation containers
+    [SerializeField] private Transform sv_Creation;
     [SerializeField] private CategoryData[] categories;
-    [SerializeField] private ObjectData selectedObject;
-    [SerializeField] private CategoryData selectedCategory;
     [Space]
+
+    //Ui
     [SerializeField] private TextMeshProUGUI txt_Title;
     [SerializeField] private Button btn_Back;
 
+    //Selected ones
+    [Space]
+    private CategoryData selectedCategory;
+    private ObjectData selectedObject;
+    private MaterialData selectedMaterial;
+    public MaterialData SelectedMaterial()
+    {
+        return selectedMaterial; 
+    }
+
+    //Position in the array
     private int categoriesPosList;
     private int objectsPosList;
     private int materialsPosList;
@@ -42,7 +47,8 @@ public class CategoryManager : MonoBehaviour
     {
         Instance = this;
 
-        for (int i = 0; i < uiMediator.Medators.Length; i++)
+        //Parse each element in the mediator yo detect where is each element
+        /*for (int i = 0; i < uiMediator.Medators.Length; i++)
         {
             if (uiMediator.Medators[i].name == CATEGORIES)
             {
@@ -58,7 +64,7 @@ public class CategoryManager : MonoBehaviour
             {
                 materialsPosList = i;
             }
-        }
+        }*/
     }
 
     private void Start()
@@ -66,135 +72,155 @@ public class CategoryManager : MonoBehaviour
         PopulateCategories();
     }
 
+    #region Populate Categories
     void PopulateCategories()
     {
+        //Clean All Scroll Views
         CleanContentTables();
 
+        //Assing Title
         txt_Title.text = "Categorias";
 
+        //Hide and clean Back Button
         btn_Back.gameObject.SetActive(false);
         btn_Back.onClick.RemoveAllListeners();
 
+        //Clean Selected Items
         selectedCategory = null;
         selectedObject = null;
+        selectedMaterial = null;
 
+        //Parse all categories to Populate
         foreach (CategoryData category in categories)
         {
-            Transform btn_Category = Instantiate(btn_categoryPrefab, sv_Category);
+            //Instance btns for each category
+            Transform btn_Category = Instantiate(btn_CreationPrefab, sv_Creation);
 
+            //Populate name and Icon
             btn_Category.GetComponentInChildren<Image>().sprite = category.categoryIcon;
             btn_Category.GetComponentInChildren<TextMeshProUGUI>().text = category.categoryName;
 
-            //Assing listener to pass to de populate object
+            //Populate buttons actions
             btn_Category.GetComponent<Button>().onClick.AddListener(() => {
                 PopulateObjects(category);
-                uiMediator.ShowPanel(objectsPosList);
-                uiMediator.HidePanel(categoriesPosList);
             });
         }      
     }
+    #endregion
 
+    #region Populate Objects
     private void PopulateObjects(CategoryData category)
     {
+        //Set selectex category
         selectedCategory = category;
 
-        CleanContentTables();
+        //Set title for de selected category
+        txt_Title.text = selectedCategory.categoryName;
 
-        txt_Title.text = "Objetos";
+        //Clean All Scroll Views
+        CleanContentTables();  
 
+        //Reset back button
         btn_Back.gameObject.SetActive(true);
         btn_Back.onClick.RemoveAllListeners();
+
+        //Set actions for back button
         btn_Back.onClick.AddListener(() => {
-            uiMediator.ShowPanel(categoriesPosList);
-            uiMediator.HidePanel(objectsPosList);
             PopulateCategories();
         });
 
+        //Parse each element in category
         foreach (ObjectData objectData in category.objects)
         {
-            Transform btn_Objects = Instantiate(btn_objectPrefab, sv_Objects);
+            //Error if a material of any object is less than 1
+            if (objectData != null && objectData.materials.Length < 1)
+            {
+                Debug.LogError($"{objectData.objectName} doesn't have materials");
+                return;
+            }
 
+            //Instance a button for each element
+            Transform btn_Objects = Instantiate(btn_CreationPrefab, sv_Creation);
+
+            //Populate name and Icon
             btn_Objects.GetComponentInChildren<Image>().sprite = objectData.objectIcon;
             btn_Objects.GetComponentInChildren<TextMeshProUGUI>().text = objectData.objectName;
 
+            //Populate buttons actions
             btn_Objects.GetComponent<Button>().onClick.AddListener(() => {
                 PopulateMaterials(objectData);
-                uiMediator.ShowPanel(materialsPosList);
-                uiMediator.HidePanel(objectsPosList);
             });
         }
     }
+    #endregion
 
+    #region Populate Materials
     private void PopulateMaterials(ObjectData objectData)
     {
+        //Set selected Object
         selectedObject = objectData;
 
+        //Set title
+        txt_Title.text = selectedObject.objectName + " de:";
+
+        //Clean All scroll views
         CleanContentTables();
 
-        txt_Title.text = "Materiales";
-
+        //Reset back button
         btn_Back.gameObject.SetActive(true);
         btn_Back.onClick.RemoveAllListeners();
+
+        //Set actions for back button
         btn_Back.onClick.AddListener(() => {
-            uiMediator.ShowPanel(objectsPosList);
-            uiMediator.HidePanel(materialsPosList);
             PopulateObjects(selectedCategory);
         });
 
+
+        //Check if Selected object has 2 or more materials
         if (selectedObject.materials != null && selectedObject.materials.Count() >= 2)
         {
+            //Parce each material
             foreach (MaterialData materialData in selectedObject.materials)
             {
-                Transform btn_Materials = Instantiate(btn_materialPrefab, sv_Material);
+                //Insance all buttons for materials
+                Transform btn_Materials = Instantiate(btn_CreationPrefab, sv_Creation);
 
+                //Populate name and Icon
                 btn_Materials.GetComponentInChildren<Image>().sprite = materialData.materialIcon;
                 btn_Materials.GetComponentInChildren<TextMeshProUGUI>().text = materialData.materialName;
 
+                //Populate buttons actions
                 btn_Materials.GetComponent<Button>().onClick.AddListener(() => {
-                    MaterialSameActions();
-                    //Set material
+                    MaterialSameActions(materialData);
                 });
-
-                //Add the old system that create materials
             }
         }
         else
         {
-            MaterialSameActions();
-            //Hide panel
-            //Tap to spawn 
+            //Pass to the action if doesn't have 2 or more materials
+            MaterialSameActions(selectedObject.materials[0]);
         }
     }
 
-    private void MaterialSameActions()
+    private void MaterialSameActions(MaterialData data)
     {
         uiMediator.HidePanel(0);
+        selectedMaterial = data;
         CreateObjects.instance.CanCreate(true);
     }
+    #endregion
 
+    #region Clean Scroll views
     private void CleanContentTables()
     {
-        foreach (Transform child in sv_Category)
-        {
-            Destroy(child.gameObject);
-        }
-
-        foreach (Transform child in sv_Objects)
-        {
-            Destroy(child.gameObject);
-        }
-
-        foreach (Transform child in sv_Material)
+        foreach (Transform child in sv_Creation)
         {
             Destroy(child.gameObject);
         }
     }
+    #endregion
 
-    public ObjectData objectDataPublic()
-    {
-        return selectedObject;
-    }
-
+    #region Public classes
     [System.Serializable]
     public class CategoryData
     {
@@ -207,7 +233,6 @@ public class CategoryManager : MonoBehaviour
     public class ObjectData
     {
         public string objectName;
-        public SO_PhysicalObjectData objectData;
         public Sprite objectIcon;
         public MaterialData[] materials;
     }
@@ -217,6 +242,7 @@ public class CategoryManager : MonoBehaviour
     {
         public string materialName;
         public Sprite materialIcon;
-        public Material material;
+        public SO_PhysicalObjectData objectData;
     }
+    #endregion
 }
