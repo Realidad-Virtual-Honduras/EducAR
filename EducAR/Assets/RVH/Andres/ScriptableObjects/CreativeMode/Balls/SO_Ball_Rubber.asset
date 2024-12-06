@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb50f2b3565587541b51b9c3dc990a69, type: 3}
-  m_Name: SO_Rubber_Ball
+  m_Name: SO_Ball_Rubber
   m_EditorClassIdentifier: 
   objectName: Pelota de goma
   objectPrefab: {fileID: 1884008311990764875, guid: 610b1607f6f9b434c9f9ad8727b2852a,
     type: 3}
-  objectSize: {x: 1, y: 1, z: 1}
+  objectVisualPrefab: {fileID: 1884008311990764875, guid: d32ab55d42abd4944b9062e3b736cbe8,
+    type: 3}

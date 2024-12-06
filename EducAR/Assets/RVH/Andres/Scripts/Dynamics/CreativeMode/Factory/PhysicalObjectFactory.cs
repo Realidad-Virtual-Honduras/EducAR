@@ -11,7 +11,7 @@ public class PhysicalObjectFactory : MonoBehaviour
         Instance = this;
     }
 
-    public void CreateObject(SO_PhysicalObjectData data, Vector3 position, Quaternion rotation, Transform parent)
+    public void CreateObject(SO_PhysicalObjectData data, Vector3 position, Quaternion rotation, Vector3 scale, Transform parent)
     {
         if(data.objectPrefab == null)
         {
@@ -20,6 +20,7 @@ public class PhysicalObjectFactory : MonoBehaviour
         }
 
         GameObject obj = Instantiate(data.objectPrefab, position, rotation, parent);
+        obj.transform.localScale = scale;
 
         /*if (obj.GetComponent<PhysicalObject>())
         {

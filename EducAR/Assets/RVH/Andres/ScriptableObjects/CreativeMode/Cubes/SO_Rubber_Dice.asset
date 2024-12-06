@@ -15,4 +15,5 @@ MonoBehaviour:
   objectName: Dado de Goma
   objectPrefab: {fileID: 2085952626331032832, guid: e7f78289fef796f4a9600f702cd585ce,
     type: 3}
-  objectSize: {x: 1, y: 1, z: 1}
+  objectVisualPrefab: {fileID: 2085952626331032832, guid: f4b0fb644ca6877438d1965c9e895b31,
+    type: 3}

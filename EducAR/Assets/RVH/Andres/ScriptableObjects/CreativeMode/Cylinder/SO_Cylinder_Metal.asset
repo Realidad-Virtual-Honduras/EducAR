@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb50f2b3565587541b51b9c3dc990a69, type: 3}
+  m_Name: SO_Cylinder_Metal
+  m_EditorClassIdentifier: 
+  objectName: 
+  objectPrefab: {fileID: 6177660155755441054, guid: 49966720a65ac3b40b9924124afb8072,
+    type: 3}
+  objectVisualPrefab: {fileID: 6177660155755441054, guid: 81d66cc3d4bc6bb41b3abc2e8d59af17,
+    type: 3}

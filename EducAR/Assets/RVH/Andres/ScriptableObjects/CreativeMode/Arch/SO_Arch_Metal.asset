@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb50f2b3565587541b51b9c3dc990a69, type: 3}
+  m_Name: SO_Arch_Metal
+  m_EditorClassIdentifier: 
+  objectName: Arco de metal
+  objectPrefab: {fileID: 3954718711257166855, guid: a29d497343a8c1a4db11a9c07d0d9442,
+    type: 3}
+  objectVisualPrefab: {fileID: 3954718711257166855, guid: ca8810eb548bff2469c2ca8d776e3d67,
+    type: 3}

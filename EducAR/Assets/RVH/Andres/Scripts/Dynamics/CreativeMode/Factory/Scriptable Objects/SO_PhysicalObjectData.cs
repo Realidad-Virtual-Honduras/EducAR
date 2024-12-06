@@ -7,5 +7,5 @@ public class SO_PhysicalObjectData : ScriptableObject
 {
     public string objectName;
     public GameObject objectPrefab;
-    public Vector3 objectSize = Vector3.one;
+    public GameObject objectVisualPrefab;
 }

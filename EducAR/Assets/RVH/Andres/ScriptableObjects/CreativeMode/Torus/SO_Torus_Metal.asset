@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb50f2b3565587541b51b9c3dc990a69, type: 3}
-  m_Name: SO_Marmol_Dice
+  m_Name: SO_Torus_Metal
   m_EditorClassIdentifier: 
-  objectName: Dado de Marmol
-  objectPrefab: {fileID: 2085952626331032832, guid: ec7e983d2205e014b82e2ab46abc70b7,
+  objectName: Torus de metal
+  objectPrefab: {fileID: 3080979482328738727, guid: 68c40e3197e8a844fac05deb1825aadb,
     type: 3}
-  objectSize: {x: 1, y: 1, z: 1}
+  objectVisualPrefab: {fileID: 3080979482328738727, guid: e9114e72da4e2eb4d8f4b23a1459ed69,
+    type: 3}

@@ -8,13 +8,7 @@ using static CategoryManager;
 
 public class CategoryManager : MonoBehaviour
 {
-    private const string CATEGORIES = "Categories";
-    private const string OBJECTS = "Objects";
-    private const string MATERIALS = "Materials";
-
     public static CategoryManager Instance;
-
-    [SerializeField] private UiMediator uiMediator;
 
     //Prefabs Ui
     [SerializeField] private Transform btn_CreationPrefab;
@@ -36,40 +30,28 @@ public class CategoryManager : MonoBehaviour
     public MaterialData SelectedMaterial()
     {
         return selectedMaterial; 
-    }
-
-    //Position in the array
-    private int categoriesPosList;
-    private int objectsPosList;
-    private int materialsPosList;
+    }    
 
     private void Awake()
     {
-        Instance = this;
-
-        //Parse each element in the mediator yo detect where is each element
-        /*for (int i = 0; i < uiMediator.Medators.Length; i++)
-        {
-            if (uiMediator.Medators[i].name == CATEGORIES)
-            {
-                categoriesPosList = i;
-            }
-
-            if (uiMediator.Medators[i].name == OBJECTS)
-            {
-                objectsPosList = i;
-            }
-
-            if (uiMediator.Medators[i].name == MATERIALS)
-            {
-                materialsPosList = i;
-            }
-        }*/
+        Instance = this;        
     }
 
     private void Start()
     {
         PopulateCategories();
+    }
+
+    public void DetectObjectAmount()
+    {
+        if(selectedObject.materials.Length >= 2)
+        {
+            PopulateMaterials(selectedObject);
+        }
+        else
+        {
+            PopulateObjects(selectedCategory);
+        }
     }
 
     #region Populate Categories
@@ -204,9 +186,10 @@ public class CategoryManager : MonoBehaviour
 
     private void MaterialSameActions(MaterialData data)
     {
-        uiMediator.HidePanel(0);
         selectedMaterial = data;
-        CreateObjects.instance.CanCreate(true);
+        SessionManager.instance.SwapFactoryToCreated();
+        SessionManager.instance.CanCreate(true);
+        TapToPlace.instance.CreateObjectToVisualise(data.objectData.objectVisualPrefab);
     }
     #endregion
 

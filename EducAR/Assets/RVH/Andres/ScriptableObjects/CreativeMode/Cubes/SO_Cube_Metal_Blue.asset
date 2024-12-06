@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb50f2b3565587541b51b9c3dc990a69, type: 3}
+  m_Name: SO_Cube_Metal_Blue
+  m_EditorClassIdentifier: 
+  objectName: Cubo de Metal azul
+  objectPrefab: {fileID: 2085952626331032832, guid: ec7e983d2205e014b82e2ab46abc70b7,
+    type: 3}
+  objectVisualPrefab: {fileID: 2085952626331032832, guid: f4b0fb644ca6877438d1965c9e895b31,
+    type: 3}
