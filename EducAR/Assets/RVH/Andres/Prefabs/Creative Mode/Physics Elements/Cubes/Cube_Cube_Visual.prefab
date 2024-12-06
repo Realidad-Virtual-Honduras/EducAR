@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 747767268150066732, guid: e558b5b4c29d3884e935e3d399294879,
         type: 3}
       propertyPath: m_Name
-      value: Cube_Dice_Visual
+      value: Cube_Cube_Visual
       objectReference: {fileID: 0}
     - target: {fileID: 904874796643410430, guid: e558b5b4c29d3884e935e3d399294879,
         type: 3}
@@ -87,8 +87,10 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents:
     - {fileID: 2157555916333563616, guid: e558b5b4c29d3884e935e3d399294879, type: 3}
+    - {fileID: 6993890440367421178, guid: e558b5b4c29d3884e935e3d399294879, type: 3}
     m_RemovedGameObjects:
     - {fileID: 9141447048988065179, guid: e558b5b4c29d3884e935e3d399294879, type: 3}
+    - {fileID: 9167657345340120052, guid: e558b5b4c29d3884e935e3d399294879, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e558b5b4c29d3884e935e3d399294879, type: 3}

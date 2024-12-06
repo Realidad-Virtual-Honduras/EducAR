@@ -73,7 +73,7 @@ public class TapToPlace : MonoBehaviour
 
     private void FingerUp(EnhandedTouch.Finger finger)
     {
-        if (SessionManager.instance.CanCreateObjects())
+        if (SessionManager.instance.CanCreateObjects() && visualPrefab != null) 
         {
             if (raycastManager.Raycast(finger.currentTouch.screenPosition, hitList, TrackableType.PlaneWithinPolygon))
             {
