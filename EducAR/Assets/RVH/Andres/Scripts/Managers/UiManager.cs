@@ -7,9 +7,102 @@ using UnityEngine.Rendering;
 
 public class UiManager : MonoBehaviour
 {
+    //Instace Class
     public static UiManager instance;
 
+    [Header("Scripts")]
+    [SerializeField] private UiMediator uiMediator;
+
+    #region Strings Ui
+    [Header("Strings Ui")]
+    [SerializeField] private string loging;
+    [SerializeField] private string register;
+    [SerializeField] private string mainMenu;
+    [SerializeField] private string instructionsActivity;
+    [SerializeField] private string showScore;
+    [SerializeField] private string inGame;
+    [SerializeField] private string classInfo;
+    [SerializeField] private string activities;
+    [SerializeField] private string options;
+    [SerializeField] private string profile;
+
+    private int logingValuePositionUi;
+    private int registerValuePositionUi;
+    private int mainMenuValuePositionUi;
+    private int instructionsActivityValuePositionUi;
+    private int showScoreValuePositionUi;
+    private int inGameValuePositionUi;
+    private int classInfoValuePositionUi;
+    private int activityValuePositionUi;
+    private int optionsValuePositionUi;
+    private int profileValuePositionUi;
+
+    #region Public Values Ui
+    //Loging
+    public int LogingValueUi()
+    {
+        return logingValuePositionUi;
+    }
+
+    //Register
+    public int RegisterValueUi()
+    {
+        return registerValuePositionUi;
+    }
+
+    //Main Menu
+    public int MainMenuValueUi()
+    {
+        return mainMenuValuePositionUi;
+    }
+
+    //Instructions
+    public int InstructionsActivityValueUi()
+    {
+        return instructionsActivityValuePositionUi;
+    }
+
+    //Show Score
+    public int ShowScoreValueUi()
+    {
+        return showScoreValuePositionUi;
+    }
+
+    //In Game
+    public int InGameValueUi()
+    {
+        return inGameValuePositionUi;
+    }
+
+    //Classes
+    public int ClassesValueUi()
+    {
+        return classInfoValuePositionUi;
+    }
+
+    //Activities
+    public int ActivitiesValueUi()
+    {
+        return activityValuePositionUi;
+    }
+
+    //Options
+    public int OptionsValueUi()
+    {
+        return optionsValuePositionUi;
+    }
+
+    //Profile
+    public int ProfileValueUi()
+    {
+        return profileValuePositionUi;
+    }
+    #endregion
+    #endregion
+
+    [Header("Common")]
     public TextMeshProUGUI instructionsText;
+    public bool useDarkMode = true;
 
     [Header("Button back from game")]
     [SerializeField, Tooltip("Boton del juego que regresa al menu")] private GameObject[] btnBackFromPoints;
@@ -38,6 +131,71 @@ public class UiManager : MonoBehaviour
     {
         if(instance == null)
             instance = this;
+
+        #region Detect Mediator Number;
+        for (int i = 0; i < uiMediator.Medators.Length; i++)
+        {
+            //Loging
+            if (uiMediator.Medators[i].name == loging)
+            {
+                logingValuePositionUi = i;
+            }
+
+            //Register
+            if (uiMediator.Medators[i].name == register)
+            {
+                registerValuePositionUi = i;
+            }
+
+            //Main Menu
+            if (uiMediator.Medators[i].name == mainMenu)
+            {
+                mainMenuValuePositionUi = i;
+            }
+
+            //Instructions
+            if (uiMediator.Medators[i].name == instructionsActivity)
+            {
+                instructionsActivityValuePositionUi = i;
+            }
+
+            //Show Score
+            if (uiMediator.Medators[i].name == showScore)
+            {
+                showScoreValuePositionUi = i;
+            }
+
+            //In Game
+            if (uiMediator.Medators[i].name == inGame)
+            {
+                inGameValuePositionUi = i;
+            }
+
+            //Class info
+            /*if (uiMediator.Medators[i].name == classInfo)
+            {
+                classInfoValuePositionUi = i;
+            }*/
+
+            //Activities
+            if (uiMediator.Medators[i].name == activities)
+            {
+                activityValuePositionUi = i;
+            }
+
+            //Options
+            /*if (uiMediator.Medators[i].name == options)
+            {
+                optionsValuePositionUi = i;
+            }
+
+            //Profile
+            if (uiMediator.Medators[i].name == profile)
+            {
+                profileValuePositionUi = i;
+            }*/
+        }
+        #endregion
     }
 
     public void ChangeElements(int idx)
@@ -71,6 +229,40 @@ public class UiManager : MonoBehaviour
         //Text
         for (int i = 0; i < textToChangeColorDark.Length; i++)
             textToChangeColorDark[i].color = darkTextClassColor[idx];
+        #endregion
+        #endregion
+    }
+
+    public void ChangeUi(string className, Sprite classIcon, Color lightColor, Color darkColor, Color darkText)
+    {
+        #region Icon
+        for (int i = 0; i < imgIconClass.Length; i++)
+            imgIconClass[i].sprite = classIcon;
+        #endregion
+
+        #region Text
+        for (int i = 0; i < textToChangeClassName.Length; i++)
+            textToChangeClassName[i].text = className;
+        #endregion
+
+        #region Color
+        #region Light
+        //BG
+        for (int i = 0; i < imgLightClassBG.Length; i++)
+            imgLightClassBG[i].color = lightColor;
+
+        //Text
+        for (int i = 0; i < textToChangeColorLight.Length; i++)
+            textToChangeColorLight[i].color = lightColor;
+        #endregion
+        #region Dark
+        //BG
+        for (int i = 0; i < imgDarkClassBG.Length; i++)
+            imgDarkClassBG[i].color = darkColor;
+
+        //Text
+        for (int i = 0; i < textToChangeColorDark.Length; i++)
+            textToChangeColorDark[i].color = darkText;
         #endregion
         #endregion
     }

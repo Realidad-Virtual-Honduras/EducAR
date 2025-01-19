@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
 
     public bool activeContinue = true;
 
+    [Header("Directories")]
+    public string menusDirections = "RVH/Andres/Scenes/Menus/";
+    public string classesDirections = "RVH/Andres/Scenes/Levels/";
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,7 +30,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject obj in persistentObjects)
             Object.DontDestroyOnLoad(obj);
 
-        LoadScene("RVH/Andres/Scenes/Menus/BgMenu");
+        LoadScene(menusDirections +"BgMenu");
     }
 
 
